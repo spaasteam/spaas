@@ -28,26 +28,32 @@ export default class Project {
   create () {
     console.log(chalk.green(`SPaaS即将创建一个新项目!`))
     this.ask()
-      .then(answers => {
+      .then(async (answers) => {
         this.conf = Object.assign(this.conf, answers)
-        this.downTemplate()
+        await this.downTemplate()
       })
       .catch(err => console.log(chalk.red('创建项目失败: ', err)))
+      .finally(() => {
+          process.exit(1)
+      })
   }
 
   downTemplate() {
     return new Promise(async (resolve, reject) => {
+      const projectName = this.conf.projectName;
       const spinner = ora(`正在从 ${DEFAULT_TEMPLATE_SRC} 拉取远程模板...`).start()
 
-      download(DEFAULT_TEMPLATE_SRC, `./${this.conf.projectName}`, async error => {
+      download(DEFAULT_TEMPLATE_SRC, `./${projectName}`, async error => {
         if (error) {
           spinner.color = 'red'
           spinner.fail(chalk.red('拉取远程模板仓库失败！'))
-          await fs.remove('./')
-          return resolve()
+          await fs.remove(`./${projectName}`)
+          return reject()
         }
         spinner.color = 'green'
         spinner.succeed(`${chalk.grey('拉取远程模板仓库成功！')}`)
+        console.log(`${chalk.green('✔ ')}${chalk.grey(`创建项目: ${chalk.grey.bold(projectName)}`)}`)
+        console.log(chalk.green(`请进入项目目录 ${chalk.green.bold(projectName)} 开始工作吧！😝`))
         resolve()
       })
     });

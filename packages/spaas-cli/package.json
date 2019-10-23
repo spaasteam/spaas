@@ -1,6 +1,6 @@
 {
   "name": "@spaas/cli",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "为spaas打造的命令行工具",
   "main": "index.js",
   "scripts": {
@@ -36,6 +36,8 @@
     "commander": "^3.0.2",
     "download-git-repo": "^3.0.2",
     "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.0",
+    "latest-version": "^5.1.0",
     "lodash": "^4.17.15",
     "mem-fs": "^1.1.3",
     "mem-fs-editor": "^6.0.0",

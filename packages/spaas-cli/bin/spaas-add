@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+const program = require('commander')
+
+const Install = require('../dist/add/index').default
+const { getYarnLock } = require('../dist/util')
+
+program
+  .option('-W, --ignore-workspace-root-check', 'required to run yarn add inside a workspace root')
+  .option('-D, --dev', 'save package to your `devDependencies`')
+  .option('-P, --peer', 'save package to your `peerDependencies`')
+  .option('-O, --optional', 'save package to your `optionalDependencies`')
+  .option('-E, --exact', 'install exact version')
+  .option('-T, --tilde', 'install most recent release with the same minor version')
+  .option('-A, --audit', 'Run vulnerability audit on installed packages')
+  .parse(process.argv)
+
+const args = program.args
+const {
+  ignoreWorkspaceRootCheck,
+  dev,
+  peer,
+  optional,
+  exact,
+  tilde,
+  audit
+} = program
+
+const pkgName = args.join(' ')
+
+const installPkg = new Install({
+  pkgName,
+  ignoreWorkspaceRootCheck,
+  dev,
+  peer,
+  optional,
+  exact,
+  tilde,
+  audit
+})
+
+// 检查是否有yarn.lock文件，如果没lock文件，则强制更新，会优先从私服拉取依赖包
+installPkg.create(!getYarnLock())
