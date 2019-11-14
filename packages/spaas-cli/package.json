@@ -1,6 +1,6 @@
 {
   "name": "@spaas/cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "为spaas打造的命令行工具",
   "main": "index.js",
   "scripts": {
@@ -55,5 +55,6 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.6.4"
-  }
+  },
+  "gitHead": "79f9c2e0bbd83b7140b5c041d696c79240010790"
 }
