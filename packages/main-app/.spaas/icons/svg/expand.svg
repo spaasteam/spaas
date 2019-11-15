@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1565948640105" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3042" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><defs><style type="text/css">@font-face { font-weight: 400; font-style: normal; font-family: Inter-Loom; src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Regular.woff2") format("woff2"); }
+@font-face { font-weight: 400; font-style: italic; font-family: Inter-Loom; src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Italic.woff2") format("woff2"); }
+@font-face { font-weight: 500; font-style: normal; font-family: Inter-Loom; src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Medium.woff2") format("woff2"); }
+@font-face { font-weight: 500; font-style: italic; font-family: Inter-Loom; src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-MediumItalic.woff2") format("woff2"); }
+@font-face { font-weight: 700; font-style: normal; font-family: Inter-Loom; src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Bold.woff2") format("woff2"); }
+@font-face { font-weight: 700; font-style: italic; font-family: Inter-Loom; src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-BoldItalic.woff2") format("woff2"); }
+@font-face { font-weight: 900; font-style: normal; font-family: Inter-Loom; src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Black.woff2") format("woff2"); }
+@font-face { font-weight: 900; font-style: italic; font-family: Inter-Loom; src: url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-BlackItalic.woff2") format("woff2"); }
+</style></defs><path d="M1024 921.6H0v-64h1024v64z m-352-160v-512l320 256-320 256zM512 537.6H0v-64h512v64z m512-384H0v-64h1024v64z" p-id="3043"></path></svg>
