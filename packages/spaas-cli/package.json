@@ -30,6 +30,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@spaas/main-app": "1.0.3",
     "@types/fs-extra": "^8.0.1",
     "adm-zip": "^0.4.13",
     "chalk": "^2.4.2",
@@ -56,5 +57,5 @@
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.6.4"
   },
-  "gitHead": "0ba5176286916cc12aa858b4242d1ccc73c4091c"
+  "gitHead": "dd28242d320faf58668819a1fa325309ac5841fa"
 }
