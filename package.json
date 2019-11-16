@@ -12,7 +12,7 @@
     "release:lerna": "lerna publish --force-publish=* --exact --temp-tag --registry=http://129.204.96.188:4873",
     "release:beta": "lerna publish --force-publish=* --exact --temp-tag  --preid=beta --npm-tag=beta --registry=http://129.204.96.188:4873",
     "release": "npm-run-all release:lerna changelog",
-    "pub": "sh ./build/release.sh"
+    "pub": "sh ./build/pub.sh"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
