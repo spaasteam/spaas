@@ -11,4 +11,5 @@ program
   .command('init [projectName]', 'Init a project with default templete')
   .command('update', 'Update packages of spaas')
   .command('add [packages ...] [flags]', 'Add private packages of spaas')
+  .command('start', 'start dev server')
   .parse(process.argv)

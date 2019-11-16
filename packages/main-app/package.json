@@ -1,0 +1,111 @@
+{
+	"name": "@spaas/main-app",
+	"version": "1.0.3",
+	"description": "Nuxt2 + element UI project",
+	"author": "spaasteam",
+	"license": "MIT",
+	"keywords": [
+		"vue",
+		"element-ui",
+		"nuxt",
+		"dashboard",
+		"admin-template"
+	],
+	"files": [
+		".spaas"
+	],
+	"main": "main/index.js",
+	"engines": {
+		"npm": ">= 5.2.0"
+	},
+	"scripts": {
+		"mock": "cross-env MODE=mock HOST=0.0.0.0 nuxt",
+		"dev": "cross-env MODE=dev nuxt --config-file ./.spaas/nuxt.config.js",
+		"mock:nologin": "cross-env MODE=mock NO_LOGIN=1 nuxt",
+		"dev:nologin": "cross-env MODE=dev NO_LOGIN=1 nuxt",
+		"build": "cross-env MODE=prod nuxt build --config-file ./.spaas/nuxt.config.js",
+		"build:docker": "nuxt build",
+		"new": "plop",
+		"start": "cross-env HOST=0.0.0.0 PORT=3333 MODE=prod nuxt start",
+		"start:docker": "nuxt start",
+		"generate": "cross-env MODE=prod nuxt generate",
+		"deploy": "now --npm --public",
+		"stdver": "standard-version -m '[skip ci] chore(release): v%s'",
+		"release": "gren release --override",
+		"fix": "eslint --fix  src/**/*.js  src/**/*.vue --quiet",
+		"lint": "lint-staged",
+		"commitmsg": "commitlint -E GIT_PARAMS",
+		"eslint-check": "eslint --print-config . | eslint-config-prettier-check",
+		"commit": "npx git-cz"
+	},
+	"dependencies": {
+		"@commitlint/cli": "^8.0.0",
+		"@commitlint/config-conventional": "^8.0.0",
+		"@femessage/el-form-renderer": "^1.11.2",
+		"@femessage/theme-deepexi": "^2.4.11",
+		"@nuxtjs/axios": "^5.5.4",
+		"@nuxtjs/dotenv": "^1.3.0",
+		"@nuxtjs/pwa": "^3.0.0-beta.16",
+		"@vue/cli-service": "^3.8.0",
+		"@vue/eslint-config-airbnb": "^4.0.0",
+		"clipboard": "^2.0.4",
+		"dayjs": "^1.7.4",
+		"dotenv": "^6.0.0",
+		"el-data-table": "^1.5.1",
+		"element-ui": "2.13.2",
+		"eslint-config-spaas": "^0.0.9",
+		"eslint-config-standard": "^12.0.0",
+		"git-cz": "^3.2.1",
+		"js-cookie": "^2.2.0",
+		"less": "^3.9.0",
+		"less-loader": "^4.1.0",
+		"nuxt": "^2.8.1",
+		"path-to-regexp": "^3.0.0",
+		"prettier-eslint-cli": "^4.7.1",
+		"stylelint-config-prettier": "^5.2.0"
+	},
+	"devDependencies": {
+		"@nuxtjs/style-resources": "^0.1.2",
+		"babel-eslint": "^10.0.1",
+		"babel-plugin-component": "^1.1.0",
+		"cross-env": "^5.1.3",
+		"eslint": "^5.15.1",
+		"eslint-config-prettier": "^4.3.0",
+		"eslint-loader": "^2.1.2",
+		"eslint-plugin-standard": "^4.0.0",
+		"eslint-plugin-vue": "^5.2.2",
+		"file-save": "^0.2.0",
+		"github-release-notes": "^0.17.0",
+		"husky": "^1.3.1",
+		"image-webpack-loader": "^5.0.0",
+		"lint-staged": "^8.1.0",
+		"mkdirp": "^0.5.1",
+		"plop": "^2.4.0",
+		"prettier": "^1.16.0",
+		"standard-version": "^6.0.1",
+		"stylelint": "^9.10.0",
+		"stylelint-config-standard": "^18.2.0",
+		"svg-sprite-loader": "^4.1.6"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"post-commit": "git update-index --again"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"prettier --write",
+			"eslint --fix src/**/*.js src/**/*.vue --quiet",
+			"git add"
+		],
+		"*.vue": [
+			"prettier --write",
+			"stylelint --fix",
+			"eslint --fix src/**/*.js src/**/*.vue --quiet",
+			"git add"
+		]
+	},
+	"gitHead": "dd28242d320faf58668819a1fa325309ac5841fa"
+}
