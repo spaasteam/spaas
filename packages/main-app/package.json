@@ -52,7 +52,7 @@
 		"dayjs": "^1.7.4",
 		"dotenv": "^6.0.0",
 		"el-data-table": "^1.5.1",
-		"element-ui": "2.13.2",
+		"element-ui": "^2.13.2",
 		"eslint-config-spaas": "^0.0.9",
 		"eslint-config-standard": "^12.0.0",
 		"git-cz": "^3.2.1",
