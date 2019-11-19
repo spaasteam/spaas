@@ -1,6 +1,6 @@
 {
 	"name": "@spaas/main-app",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Nuxt2 + element UI project",
 	"author": "spaasteam",
 	"license": "MIT",
