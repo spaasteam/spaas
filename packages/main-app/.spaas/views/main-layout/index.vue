@@ -15,7 +15,7 @@
       <el-container class="main-container" direction="vertical">
         <!-- 页面 header -->
         <v-breadcrumb v-if="hasHeader" class="nuxt-header main-breadcurmb"></v-breadcrumb>
-        <app-options v-if="hasAppOptions"></app-options>
+        <app-options v-if="hasAppOptions" @changeShowStatus="changeShowStatus"></app-options>
         <el-main class="nuxt-main">
           <div
             :class="{
@@ -52,6 +52,7 @@ import Settings from './components/settings';
 import Sidebar from './components/sidebar.vue';
 
 import breadCrumbMixin from '@/mixins/breadcrubMixin';
+import {hasSelectApp} from '../../../spaas.config';
 
 export default {
   components: {
@@ -70,23 +71,43 @@ export default {
       default: process.env.NODE_ENV !== 'production',
     },
   },
+  data() {
+    const {path, name} = this.$route;
+
+    return {
+      showAppOptions: true,
+      hasHeader: path !== '/' && name !== 'all',
+      hasAppOptions: hasSelectApp && path !== '/',
+    };
+  },
   computed: {
     ...mapState(['permission', 'setting']),
     appName() {
       return this.permission.spaName;
     },
-    hasHeader() {
-      const {path, name} = this.$route;
-      return path !== '/' && name !== 'all';
+  },
+  watch: {
+    $route: {
+      handler() {
+        const {path, name} = this.$route;
+        this.hasHeader = path !== '/' && name !== 'all';
+        this.showAppOptions = true;
+      },
+      immediate: true,
     },
-    hasAppOptions() {
-      const {path} = this.$route;
-      return path !== '/';
+    showAppOptions(newVal) {
+      const {path, name} = this.$route;
+      this.hasAppOptions = hasSelectApp && path !== '/' && newVal;
+    },
+  },
+  methods: {
+    changeShowStatus(ifShow) {
+      this.showAppOptions = ifShow;
     },
   },
 };
 </script>
-<style lang="less" scoped>
+<style lang="less">
 #__nuxt {
   // 最小宽度，防止屏幕缩小顶部栏会变形
   min-width: 900px;
@@ -113,20 +134,21 @@ export default {
   // 主体区域 Main container
   .main-container {
     background: @main-bg;
-    .nuxt-main {
-      position: relative;
-      box-sizing: border-box;
-      background: @main-bg;
+  }
 
-      .nuxt-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin-bottom: 50px;
-        padding: 20px 20px 10px;
-      }
-    }
+  .nuxt-main {
+    position: relative;
+    box-sizing: border-box;
+    background: @main-bg;
+  }
+
+  .nuxt-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 50px;
+    padding: 20px 20px 10px;
   }
 
   .footer-container {

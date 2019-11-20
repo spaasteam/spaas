@@ -59,7 +59,9 @@ export default {
     },
     hasHide() {
       const curInfo = routeInfo[this.matchedPath];
-      return curInfo && curInfo.appType !== NONE;
+      const ifShow = curInfo && curInfo.appType !== NONE;
+      this.$emit('changeShowStatus', ifShow);
+      return ifShow;
     },
   },
   watch: {

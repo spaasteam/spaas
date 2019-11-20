@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import {appName} from '../../spaas.config';
+
 import {mapMutations} from 'vuex';
 
 export default {
@@ -71,7 +73,7 @@ export default {
         {
           name: '帮助中心',
           type: 'resources',
-          url: '/spaas-console/index.html#/document',
+          url: `/spaas-console/index.html#/document?documentName=${appName}`,
         },
       ],
     };

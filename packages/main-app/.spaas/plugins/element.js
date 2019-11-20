@@ -33,6 +33,7 @@ import {
   DropdownItem,
   Row,
   Col,
+  Switch,
 } from 'element-ui';
 import ElFormRenderer from '@femessage/el-form-renderer';
 import ElDataTable from 'el-data-table';
@@ -66,7 +67,7 @@ Vue.use(Row);
 Vue.use(Col);
 Vue.use(Radio);
 Vue.use(Checkbox);
-// Vue.use(Switch)
+Vue.use(Switch);
 Vue.use(Loading.directive);
 Vue.use(Dialog);
 Vue.use(Tooltip);
