@@ -1,6 +1,7 @@
 const Template = require('@spaas/main-app');
 import * as fs from 'fs-extra'
 import * as path from 'path'
+import * as fg from 'fast-glob'
 const exec = require('child_process').exec
 const ora = require('ora')
 
@@ -25,6 +26,7 @@ export default class Index {
   async init() {
     try {
       await this.cloneMainApp(Template.dir);
+      this.createRouterFile();
       this.runNuxtCommand();
     } catch (err) {
       console.error(err);
@@ -43,7 +45,45 @@ export default class Index {
     return fs.copy(sourcePath, targetPath);
   }
   // 1、将对应的项目依赖拷贝到项目里面
-  // 2、执行nuxt start config
+  // 2、查找src文件夹下的所有router文件，生成对应的路由文件
+  // 3、执行nuxt start config
+  /**
+   * 查找src文件夹下的所有router文件，生成对应的路由文件
+   */
+  createRouterFile() {
+    const filePath = fg.sync(path.join(process.cwd(), '/src/**/route.js'), {
+      deep: 2,
+      onlyFiles: true
+    });
+    const routes = filePath.reduce((pre, cur: any) => {
+      const file = require(cur).default
+      return pre.concat(file)
+    }, []);
+    // 生成对应的JSON文件
+    this.setRouteAction(routes);
+  }
+
+  setRouteAction = routeList => {
+    const navPath = path.resolve(process.cwd(), './.spaas/const/route-info.json');
+
+    const routerInfoJson = {};
+
+    routeList.forEach(item => {
+      const { path, title = '', appType, enable } = item;
+
+      const routePath = path.startsWith('/') ? path : `/${path}`;
+
+      // 路由匹配的是 : 不是 下划线
+      routerInfoJson[routePath.replace(/_/g, ':')] = {
+        title,
+        appType,
+        enable
+      };
+    })
+
+    fs.writeFileSync(navPath, JSON.stringify(routerInfoJson, null, '   '), 'utf-8');
+  }
+
   /**
    * 执行Nuxt命令
    */

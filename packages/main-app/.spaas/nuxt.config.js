@@ -6,10 +6,10 @@
  * @LastEditors: barret
  */
 require('dotenv').config();
-const proxyConfig = require('../config/proxy.config');
+const proxyConfig = require('../proxy.config');
 const path = require('path');
 // 添加扩展路由
-const fg = require('fast-glob')
+const fg = require('fast-glob');
 
 function resolve(dir) {
   return path.join(__dirname, dir);
@@ -23,15 +23,15 @@ const env = process.env;
 const isProd = env.MODE === 'prod';
 const publicPath = env.PUBLIC_PATH || './';
 
-const filePath = fg.sync(resolve('../src/route.js'), {
+const filePath = fg.sync(resolve('../src/**/route.js'), {
   deep: 2,
-  onlyFiles: true
-})
+  onlyFiles: true,
+});
 
 const routes = filePath.reduce((pre, cur) => {
-  const file = require(cur).default
-  return pre.concat(file)
-}, [])
+  const file = require(cur).default;
+  return pre.concat(file);
+}, []);
 
 // 不能以斜杠结尾
 const apiServer = process.env.API_SERVER;
@@ -66,9 +66,9 @@ const nuxtConfig = {
     middleware: ['meta', 'auth'],
     mode: 'hash',
     extendRoutes(r) {
+      // 注意：在pages文件夹中不能加_.vue文件
       r.push(...routes);
-      console.log(r);
-    }
+    },
   },
   /*
    ** Build configuration

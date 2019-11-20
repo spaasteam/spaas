@@ -11,5 +11,6 @@ module.exports = {
   dev: {
     '/spaas-application-center': apiServer,
     '/deepexi-cloud': apiServer,
+    '/deepexi-domain-staff': apiServer,
   },
 };

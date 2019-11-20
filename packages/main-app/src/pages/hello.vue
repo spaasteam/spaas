@@ -7,7 +7,7 @@
 <script>
 export default {
   mounted() {
-    console.log('我找不到了吗？')
-  }
-}
+    console.log('我找不到了吗？');
+  },
+};
 </script>
