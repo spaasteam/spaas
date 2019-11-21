@@ -1,4 +1,14 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.0.6...v) (2019-11-19)
+# [](https://github.com/spaasteam/spaas/compare/v1.0.7...v) (2019-11-20)
+
+
+
+## [1.0.7](https://github.com/spaasteam/spaas/compare/v1.0.6...v1.0.7) (2019-11-20)
+
+
+### Features
+
+* 添加eslint-plugin-vue依赖 ([36db3a1](https://github.com/spaasteam/spaas/commit/36db3a129fb3c5c2fd3e93d4fc94d42e4bfa32f9))
+* 添加spaas nuxt命令以及mainApp包 ([3cbfbc6](https://github.com/spaasteam/spaas/commit/3cbfbc6f26e1c86f3c2bb42bb5fda66235a70a1a))
 
 
 
