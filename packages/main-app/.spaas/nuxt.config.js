@@ -66,8 +66,7 @@ const nuxtConfig = {
     middleware: ['meta', 'auth'],
     mode: 'hash',
     extendRoutes(r) {
-      // 注意：在pages文件夹中不能加_.vue文件
-      r.push(...routes);
+      r.unshift(...routes);
     },
   },
   /*
