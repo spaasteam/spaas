@@ -2,22 +2,24 @@
 
 const program = require('commander')
 
-const Project = require('../dist/create/project').default
+const Project = require('../dist/init/index').default
 
 program
   .option('--name [name]', '项目名称')
+  .option('--version [version]', '版本号')
   .option('--description [description]', '项目介绍')
   .parse(process.argv)
 
 const args = program.args
-const { description, name } = program
+const { description, name, version } = program
 
 const projectName = args[0] || name
 
 const project = new Project({
   projectName,
   projectDir: process.cwd(),
-  description
+  description,
+  version
 })
 
 project.create()

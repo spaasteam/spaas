@@ -30,6 +30,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@spaas/child-app": "1.0.8",
     "@spaas/main-app": "1.0.8",
     "@types/fs-extra": "^8.0.1",
     "adm-zip": "^0.4.13",
