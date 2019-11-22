@@ -38,11 +38,11 @@ export default class Index {
    */
   async cloneMainApp(sourcePath) {
     const targetPath = path.join(process.cwd(), '.spaas');
-    if (!fs.existsSync(targetPath)) {
+    if (fs.existsSync(targetPath)) {
       // 清除原来的.spaas目录
-      fs.remove(targetPath);
+      fs.removeSync(targetPath);
     }
-    return fs.copy(sourcePath, targetPath);
+    return fs.copySync(sourcePath, targetPath);
   }
   // 1、将对应的项目依赖拷贝到项目里面
   // 2、查找src文件夹下的所有router文件，生成对应的路由文件

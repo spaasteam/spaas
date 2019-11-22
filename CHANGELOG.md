@@ -1,4 +1,18 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.0.7...v) (2019-11-20)
+# [](https://github.com/spaasteam/spaas/compare/v1.0.8...v) (2019-11-22)
+
+
+### Features
+
+* 整理mainApp中的依赖 ([6be35c7](https://github.com/spaasteam/spaas/commit/6be35c75e0991404d4333aa26f80daf314018dec))
+
+
+
+## [1.0.8](https://github.com/spaasteam/spaas/compare/v1.0.7...v1.0.8) (2019-11-21)
+
+
+### Features
+
+* 添加404页面 ([b2cd963](https://github.com/spaasteam/spaas/commit/b2cd963a41c66b351084b91e6a81a31c0d81cbec))
 
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@spaas/cli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "为spaas打造的命令行工具",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@spaas/main-app": "1.0.7",
+    "@spaas/child-app": "1.0.8",
+    "@spaas/main-app": "1.0.8",
     "@types/fs-extra": "^8.0.1",
     "adm-zip": "^0.4.13",
     "chalk": "^2.4.2",
