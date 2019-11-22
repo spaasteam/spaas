@@ -35,8 +35,9 @@
 		"lint": "lint-staged",
 		"commitmsg": "commitlint -E GIT_PARAMS",
 		"eslint-check": "eslint --print-config . | eslint-config-prettier-check",
-    "commit": "npx git-cz",
-    "build:template": "node ./bin/build-template.js"
+		"commit": "npx git-cz",
+    "build:template": "node ./bin/build-template.js",
+    "prepack": "npm run build:template"
 	},
 	"dependencies": {
 		"@femessage/el-form-renderer": "^1.11.2",
@@ -101,5 +102,6 @@
 			"eslint --fix src/**/*.js src/**/*.vue --quiet",
 			"git add"
 		]
-	}
+	},
+	"gitHead": "d52af1f909a858a52e21a877b5aac9165df8cacb"
 }
