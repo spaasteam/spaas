@@ -1,6 +1,6 @@
 {
-	"name": "spaas-admin-template",
-	"version": "1.3.1",
+	"name": "@spaas/child-app",
+	"version": "1.0.8",
 	"description": "Nuxt2 + element UI project",
 	"author": "spaasteam",
 	"license": "MIT",
@@ -10,6 +10,9 @@
 		"nuxt",
 		"dashboard",
 		"admin-template"
+  ],
+  "files": [
+    "template"
   ],
 	"main": "main/index.js",
 	"engines": {
