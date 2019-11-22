@@ -1,6 +1,6 @@
 {
 	"name": "@spaas/main-app",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "Nuxt2 + element UI project",
 	"author": "spaasteam",
 	"license": "MIT",
@@ -59,9 +59,9 @@
 		"babel-plugin-component": "^1.1.0",
 		"cross-env": "^5.1.3",
 		"eslint": "^5.15.1",
+		"eslint-config-prettier": "^4.3.0",
 		"eslint-config-spaas": "^0.0.9",
 		"eslint-config-standard": "^12.0.0",
-		"eslint-config-prettier": "^4.3.0",
 		"eslint-loader": "^2.1.2",
 		"eslint-plugin-standard": "^4.0.0",
 		"eslint-plugin-vue": "^5.2.2",
@@ -76,8 +76,8 @@
 		"prettier-eslint-cli": "^4.7.1",
 		"standard-version": "^6.0.1",
 		"stylelint": "^9.10.0",
-		"stylelint-config-standard": "^18.2.0",
 		"stylelint-config-prettier": "^5.2.0",
+		"stylelint-config-standard": "^18.2.0",
 		"svg-sprite-loader": "^4.1.6"
 	},
 	"husky": {
