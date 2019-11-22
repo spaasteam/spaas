@@ -1,0 +1,102 @@
+{
+	"name": "spaas-admin-template",
+	"version": "1.3.1",
+	"description": "Nuxt2 + element UI project",
+	"author": "spaasteam",
+	"license": "MIT",
+	"keywords": [
+		"vue",
+		"element-ui",
+		"nuxt",
+		"dashboard",
+		"admin-template"
+  ],
+	"main": "main/index.js",
+	"engines": {
+		"npm": ">= 5.2.0"
+	},
+	"scripts": {
+		"mock": "cross-env MODE=mock HOST=0.0.0.0 spaas nuxt --config-file ./.spaas/nuxt.config.js",
+		"dev": "cross-env MODE=dev spaas nuxt --config-file ./.spaas/nuxt.config.js",
+		"mock:nologin": "cross-env MODE=mock NO_LOGIN=1 spaas nuxt --config-file ./.spaas/nuxt.config.js",
+		"dev:nologin": "cross-env MODE=dev NO_LOGIN=1 spaas nuxt --config-file ./.spaas/nuxt.config.js",
+		"build": "cross-env MODE=prod spaas nuxt build --config-file ./.spaas/nuxt.config.js",
+		"build:docker": "spaas nuxt build --config-file ./.spaas/nuxt.config.js",
+		"start": "cross-env HOST=0.0.0.0 PORT=3333 MODE=prod spaas nuxt start --config-file ./.spaas/nuxt.config.js",
+		"start:docker": "spaas nuxt start --config-file ./.spaas/nuxt.config.js",
+		"generate": "cross-env MODE=prod spaas nuxt generate --config-file ./.spaas/nuxt.config.js",
+		"deploy": "now --npm --public",
+		"stdver": "standard-version -m '[skip ci] chore(release): v%s'",
+		"release": "gren release --override",
+		"fix": "eslint --fix  src/**/*.js  src/**/*.vue --quiet",
+		"lint": "lint-staged",
+		"commitmsg": "commitlint -E GIT_PARAMS",
+		"eslint-check": "eslint --print-config . | eslint-config-prettier-check",
+    "commit": "npx git-cz",
+    "build:template": "node ./bin/build-template.js"
+	},
+	"dependencies": {
+		"@femessage/el-form-renderer": "^1.11.2",
+		"@nuxtjs/axios": "^5.5.4",
+    "@nuxtjs/pwa": "^3.0.0-beta.16",
+    "@spaas/cli": "1.0.6",
+		"clipboard": "^2.0.4",
+		"dayjs": "^1.7.4",
+		"el-data-table": "^1.5.1",
+		"element-ui": "2.13.2",
+		"js-cookie": "^2.2.0",
+		"nuxt": "^2.8.1",
+		"path-to-regexp": "^3.0.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^8.0.0",
+		"@commitlint/config-conventional": "^8.0.0",
+		"@nuxtjs/dotenv": "^1.3.0",
+		"@nuxtjs/style-resources": "^0.1.2",
+		"@vue/eslint-config-airbnb": "^4.0.0",
+		"babel-eslint": "^10.0.1",
+		"babel-plugin-component": "^1.1.0",
+		"cross-env": "^5.1.3",
+		"eslint": "^5.15.1",
+		"eslint-config-spaas": "^0.0.9",
+		"eslint-config-standard": "^12.0.0",
+		"eslint-config-prettier": "^4.3.0",
+		"eslint-loader": "^2.1.2",
+		"eslint-plugin-standard": "^4.0.0",
+		"eslint-plugin-vue": "^5.2.2",
+		"git-cz": "^3.2.1",
+		"github-release-notes": "^0.17.0",
+		"husky": "^1.3.1",
+		"image-webpack-loader": "^5.0.0",
+		"less": "^3.9.0",
+		"less-loader": "^4.1.0",
+		"lint-staged": "^8.1.0",
+		"prettier": "^1.16.0",
+		"prettier-eslint-cli": "^4.7.1",
+		"standard-version": "^6.0.1",
+		"stylelint": "^9.10.0",
+		"stylelint-config-standard": "^18.2.0",
+		"stylelint-config-prettier": "^5.2.0",
+		"svg-sprite-loader": "^4.1.6"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"post-commit": "git update-index --again"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"prettier --write",
+			"eslint --fix src/**/*.js src/**/*.vue --quiet",
+			"git add"
+		],
+		"*.vue": [
+			"prettier --write",
+			"stylelint --fix",
+			"eslint --fix src/**/*.js src/**/*.vue --quiet",
+			"git add"
+		]
+	}
+}
