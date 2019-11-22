@@ -1,4 +1,9 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.0.8...v) (2019-11-21)
+# [](https://github.com/spaasteam/spaas/compare/v1.0.8...v) (2019-11-22)
+
+
+### Features
+
+* 整理mainApp中的依赖 ([6be35c7](https://github.com/spaasteam/spaas/commit/6be35c75e0991404d4333aa26f80daf314018dec))
 
 
 
