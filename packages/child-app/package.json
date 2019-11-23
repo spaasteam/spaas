@@ -1,6 +1,6 @@
 {
 	"name": "@spaas/child-app",
-	"version": "1.0.9",
+	"version": "1.0.10",
 	"description": "Nuxt2 + element UI project",
 	"author": "spaasteam",
 	"license": "MIT",
@@ -36,14 +36,14 @@
 		"commitmsg": "commitlint -E GIT_PARAMS",
 		"eslint-check": "eslint --print-config . | eslint-config-prettier-check",
 		"commit": "npx git-cz",
-    "build:template": "node ./bin/build-template.js",
-    "prepack": "npm run build:template"
+		"build:template": "node ./bin/build-template.js",
+		"prepack": "npm run build:template"
 	},
 	"dependencies": {
 		"@femessage/el-form-renderer": "^1.11.2",
 		"@nuxtjs/axios": "^5.5.4",
-    "@nuxtjs/pwa": "^3.0.0-beta.16",
-    "@spaas/cli": "1.0.8",
+		"@nuxtjs/pwa": "^3.0.0-beta.16",
+		"@spaas/cli": "1.0.8",
 		"clipboard": "^2.0.4",
 		"dayjs": "^1.7.4",
 		"el-data-table": "^1.5.1",
