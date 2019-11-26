@@ -1,9 +1,35 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.0.8...v) (2019-11-22)
+# [](https://github.com/spaasteam/spaas/compare/v1.0.10...v) (2019-11-23)
+
+
+
+## [1.0.10](https://github.com/spaasteam/spaas/compare/v1.0.9...v1.0.10) (2019-11-23)
+
+
+### Bug Fixes
+
+* 处理子项目版本发布问题 ([0c9f656](https://github.com/spaasteam/spaas/commit/0c9f6564c6ff749b2e491c8585e823dd7842f72a))
 
 
 ### Features
 
+* 更改子应用引用spaas-cli版本依赖 ([f1f04d5](https://github.com/spaasteam/spaas/commit/f1f04d547a7ab71158957d3ab43199ea7f1a7579))
+
+
+
+## [1.0.9](https://github.com/spaasteam/spaas/compare/v1.0.8...v1.0.9) (2019-11-22)
+
+
+### Bug Fixes
+
+* 处理spaas nuxt命令行拷贝.spaas文件夹重复问题 ([aa3f999](https://github.com/spaasteam/spaas/commit/aa3f99910daa393dd9d4c64fff3aa7bbd37b2853))
+
+
+### Features
+
+* 修改spaas init命令 ([3774875](https://github.com/spaasteam/spaas/commit/3774875398ab24f29b31680711d47eb31853e1e2))
 * 整理mainApp中的依赖 ([6be35c7](https://github.com/spaasteam/spaas/commit/6be35c75e0991404d4333aa26f80daf314018dec))
+* 更新子应用依赖 ([a0b6332](https://github.com/spaasteam/spaas/commit/a0b63329d90a8b57127c05634e0d0fd745bd8180))
+* 添加子应用模板 ([a8bd3fb](https://github.com/spaasteam/spaas/commit/a8bd3fbf21bcb10cbb76bd2046c53078f793ca14))
 
 
 

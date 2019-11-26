@@ -26,7 +26,6 @@ export default class Project {
   }
 
   create() {
-    console.log(ChildApp);
     console.log(chalk.green(`SPaaS即将创建一个新项目!`))
     this.ask()
       .then(async (answers) => {
