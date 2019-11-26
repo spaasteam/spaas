@@ -113,16 +113,6 @@ export default {
     padding-left: 18px;
     color: @--color-text-primary;
     position: relative;
-
-    &:after {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 2px;
-      background-color: #f0f2f5;
-      position: absolute;
-      bottom: 0;
-    }
   }
 
   .el-menu {
@@ -137,10 +127,10 @@ export default {
     .collapse-btn {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       height: 50px;
       width: 100%;
-      background: rgba(240, 242, 245, 1);
+      padding: 0 15px;
       cursor: pointer;
     }
 
@@ -167,6 +157,7 @@ export default {
     .fix-btn-wrap {
       .btn-icon {
         transform: rotate(0deg);
+        margin: 0 8px;
       }
     }
   }
