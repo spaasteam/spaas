@@ -2,11 +2,8 @@
   <div class="layout-Head">
     <div class="fixed-head">
       <h1 class="head-logo">
-        <img
-          src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/xpaas-console/logo_SPaaS_white.png"
-          alt="sPaaS"
-          class="layout-logo"
-        />
+        <svg-icon icon-class="logo" />
+        <span>SPaaS</span>
       </h1>
       <!-- 头部菜单 -->
       <div class="head-menu">
@@ -47,7 +44,6 @@
 
 <script>
 import {appName} from '../../spaas.config';
-
 import {mapMutations} from 'vuex';
 
 export default {
@@ -136,13 +132,16 @@ export default {
     background: rgba(45, 48, 59, 1);
     .head-logo {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       width: 200px;
+      padding-left: 24px;
 
-      .layout-logo {
-        width: 80%;
-        height: auto;
+      >span {
+        padding: 0 10px;
+        font-weight: 300;
+        font-size:26px;
+        color: #fff;
       }
     }
 

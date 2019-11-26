@@ -52,6 +52,7 @@ export default {
         {
           props: {
             index: `${this.data.id}`,
+            'popper-class': 'popover-menu'
           },
         },
         [Content, childrens],
@@ -131,13 +132,34 @@ export default {
 }
 
 .el-menu-item {
+
+  .menu-item-icon {
+    z-index: 99;
+  }
+
+  .menu-item-text {
+    z-index: 99;
+  }
+
   &.is-active {
-    background-color: @backgroundColor !important;
+    position: relative;
+    color: #fff !important;
     .icon-default {
       width: 4px;
       height: 12px;
-      background-color: @primary-color;
+      background-color: #fff;
       border-radius: 15px;
+    }
+    &:after {
+      position: absolute;
+      top: 7px;
+      left: 12px;
+      content: '';
+      display: block;
+      width: 174px;
+      height: 36px;
+      background:@primary-color;
+      border-radius: 8px;
     }
   }
 }
@@ -149,6 +171,8 @@ export default {
   }
 
   .el-submenu__title {
+    height: 50px;
+    line-height: 50px;
     .menu-item-container {
       height: 100%;
       justify-content: center;
@@ -201,6 +225,13 @@ export default {
       border-radius: 1px;
       margin: 0 3px;
     }
+  }
+}
+
+.popover-menu {
+  .el-menu-item, .el-submenu__title{
+    height: 50px;
+    line-height: 50px;
   }
 }
 </style>

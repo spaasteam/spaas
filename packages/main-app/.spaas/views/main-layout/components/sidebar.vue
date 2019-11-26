@@ -19,7 +19,8 @@
       :text-color="variables.menuText"
     >
       <div class="system-name">
-        {{ appName }}
+        <img :src="appIcon || require('@/static/default_icon.svg')" />
+        <span>{{ appName }}</span>
       </div>
       <scrollbar wrap-class="scrollbar-wrapper" :noresize="false">
         <menu-list :menuList="permission.menuList"></menu-list>
@@ -56,6 +57,9 @@ export default {
     appName() {
       return this.permission.spaName;
     },
+    appIcon() {
+      return this.permission.spaIcon;
+    }
   },
   methods: {
     toggleCollapse() {
@@ -113,15 +117,18 @@ export default {
     padding-left: 18px;
     color: @--color-text-primary;
     position: relative;
-
-    &:after {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 2px;
-      background-color: #f0f2f5;
-      position: absolute;
-      bottom: 0;
+    display: flex;
+    align-items: center;
+    >img {
+      width: 23px;
+      height: 23px;
+    }
+    >span {
+      min-width: 154px;
+      margin-left: 6px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 
@@ -137,10 +144,10 @@ export default {
     .collapse-btn {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       height: 50px;
       width: 100%;
-      background: rgba(240, 242, 245, 1);
+      padding: 0 15px;
       cursor: pointer;
     }
 
@@ -155,18 +162,24 @@ export default {
     width: @sideBarMinWidth !important;
 
     .system-name {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.28s ease-in-out !important;
+      padding-left: 0;
+      justify-content: center;
+      > span {
+        display: none;
+        width: 0;
+        opacity: 0;
+        transition: opacity 0.28s ease-in-out !important;
+      }
     }
 
     .scrollbar-wrapper {
-      height: calc(100vh - 60px - 50px);
+      height: calc(100vh - 60px - 50px - 50px);
     }
 
     .fix-btn-wrap {
       .btn-icon {
         transform: rotate(0deg);
+        margin: 0 8px;
       }
     }
   }
