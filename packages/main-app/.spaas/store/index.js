@@ -30,6 +30,7 @@ export const state = () => ({
     menuList: [],
     menuReady: false,
     spaName: meta.spaName,
+    spaIcon: '',
     centerId: '',
   },
 
@@ -113,12 +114,13 @@ export const actions = {
       const productList = payload.content;
       const [product] = productList.filter(item => item.productName === meta.spaName);
       if (!product) return;
-      const {productId: centerId} = product;
+      const { productId: centerId, icon } = product;
       dispatch('fetchMenu', centerId, {root: true});
 
       commit('update', {
         permission: {
           centerId,
+          spaIcon: icon
         },
       });
     } catch (error) {

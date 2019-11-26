@@ -27,7 +27,6 @@ export default {
   justify-content: center;
   align-items: center;
   >img {
-    margin-top: -261px;
     width: 523px;
     height: 132px;
   }
