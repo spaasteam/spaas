@@ -158,7 +158,7 @@ export default {
       display: block;
       width: 174px;
       height: 36px;
-      background:#4280F6;
+      background:@primary-color;
       border-radius: 8px;
     }
   }
@@ -168,23 +168,6 @@ export default {
   .menu-item-text,
   .el-submenu__icon-arrow {
     display: none;
-  }
-
-
-  .el-menu-item {
-    .is-active {
-      &:after {
-        position: absolute;
-        top: 7px;
-        left: 12px;
-        content: '';
-        display: block;
-        width: 174px;
-        height: 36px;
-        background:red;
-        border-radius: 8px;
-      }
-    }
   }
 
   .el-submenu__title {
