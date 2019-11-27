@@ -19,7 +19,7 @@ export default {
 
 <style lang="less" scoped>
 .index {
-  height: calc(100vh - 140px);
+  height: calc(100vh - 130px);
   background: #f7f8fb;
   background-size: 100%, auto;
   background-repeat: no-repeat;

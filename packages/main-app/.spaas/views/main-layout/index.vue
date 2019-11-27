@@ -26,7 +26,7 @@
             }"
           >
             <nuxt></nuxt>
-            <el-footer class="footer-container" height="50px">
+            <el-footer class="footer-container" height="40px">
               <copyright></copyright>
             </el-footer>
           </div>
@@ -92,13 +92,12 @@ export default {
         const {path, name} = this.$route;
         this.hasHeader = path !== '/' && name !== 'all';
         this.showAppOptions = true;
+        this.$nextTick(() => {
+          this.hasAppOptions = hasSelectApp && path !== '/' && this.showAppOptions
+        })
       },
       immediate: true,
-    },
-    showAppOptions(newVal) {
-      const {path, name} = this.$route;
-      this.hasAppOptions = hasSelectApp && path !== '/' && newVal;
-    },
+    }
   },
   methods: {
     changeShowStatus(ifShow) {
@@ -125,8 +124,7 @@ export default {
   }
 
   .nuxt-header {
-    background: #fff;
-    line-height: 50px;
+    line-height: 60px;
     padding-left: 20px;
     transition: margin-left 0.28s;
   }
@@ -147,25 +145,25 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     padding: 20px 20px 10px;
   }
 
   .footer-container {
     position: absolute;
-    bottom: -50px;
+    bottom: -40px;
     left: 0;
     right: 0;
   }
 
   .medium-height {
-    min-height: calc(100vh - 140px);
+    min-height: calc(100vh - 100px);
   }
   .small-height {
-    min-height: calc(100vh - 160px);
+    min-height: calc(100vh - 150px);
   }
   .min-height {
-    min-height: calc(100vh - 210px);
+    min-height: calc(100vh - 190px);
   }
 }
 </style>

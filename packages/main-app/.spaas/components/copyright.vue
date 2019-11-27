@@ -13,8 +13,8 @@ export default {
 <style scoped>
 .copyright {
   color: rgba(0, 0, 0, 0.45);
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
-  line-height: 50px;
+  line-height: 40px;
 }
 </style>
