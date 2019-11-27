@@ -63,7 +63,6 @@ export default {
   height: 50px;
   overflow: hidden;
   padding: 0 20px;
-  border-bottom: 1px solid #eee;
   box-sizing: border-box;
 
   .breadcrumb-enter-active,

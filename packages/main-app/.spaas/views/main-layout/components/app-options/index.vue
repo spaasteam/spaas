@@ -1,16 +1,24 @@
 <template>
   <div class="app-options" v-if="hasHide">
-    <span class="app-options-title">当前应用</span>
-    <el-select
-      v-model="curAppId"
-      placeholder="请选择"
-      size="small"
-      :disabled="loading || isDisabled"
-      v-loading="loading"
-    >
-      <el-option v-for="app in appList" :key="app.value" :label="app.label" :value="app.value">
-      </el-option>
-    </el-select>
+    <span class="app-options-title">当前应用：</span>
+    <div class="select-container">
+      {{ labelText }}
+      <div class="select-icon">
+        <svg-icon icon-class="down-triangle" />
+      </div>
+      <el-select
+        v-model="curAppId"
+        placeholder="请选择"
+        size="small"
+        :disabled="loading || isDisabled"
+        v-loading="loading"
+        class="select"
+      >
+        <el-option v-for="app in appList" :key="app.value" :label="app.label" :value="app.value">
+        </el-option>
+      </el-select>
+    </div>
+
   </div>
 </template>
 
@@ -25,6 +33,7 @@ export default {
   data() {
     return {
       loading: false,
+      labelText: '请选择'
     };
   },
   computed: {
@@ -42,6 +51,7 @@ export default {
       set(value) {
         this.$store.commit('app/setAppId', value);
         const [currentApp] = this.appList.filter(({value: val}) => val === value);
+        this.labelText = currentApp.label;
         this.$store.commit('app/setApp', currentApp);
       },
     },
@@ -107,9 +117,8 @@ export default {
 
 <style lang="less">
 .app-options {
-  height: 50px;
+  height: 40px;
   padding: 0 20px;
-  background-color: #fff;
   display: flex;
   align-items: center;
 
@@ -117,4 +126,32 @@ export default {
     margin-right: 6px;
   }
 }
+
+.select-container {
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+    min-width: 100px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    .select-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .select {
+      min-width: 200px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+  }
 </style>

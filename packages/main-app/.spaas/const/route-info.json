@@ -1,1 +1,12 @@
-{}
+{
+  "/application-type": {
+    "title": "应用管理",
+    "appType": "2",
+    "enable": false
+  },
+  "/app-manage": {
+    "title": "应用类型",
+    "appType": "1",
+    "enable": true
+  }
+}
