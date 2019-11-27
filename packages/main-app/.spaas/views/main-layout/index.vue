@@ -91,7 +91,6 @@ export default {
       handler() {
         const {path, name} = this.$route;
         this.hasHeader = path !== '/' && name !== 'all';
-        console.log(666);
         this.showAppOptions = true;
         this.$nextTick(() => {
           this.hasAppOptions = hasSelectApp && path !== '/' && this.showAppOptions
