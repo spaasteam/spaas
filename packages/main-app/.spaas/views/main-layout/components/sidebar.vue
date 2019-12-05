@@ -82,7 +82,7 @@ export default {
   width: @sideBarMaxWidth !important;
   overflow: hidden;
   z-index: 100;
-  box-shadow: 1px 0 6px rgba(0, 21, 41, 0.35);
+  box-shadow: 1px 0 6px rgba(0, 0, 0, 0.15);
 
   //reset element-ui css
   .horizontal-collapse-transition {
