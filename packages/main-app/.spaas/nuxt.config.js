@@ -75,22 +75,14 @@ const nuxtConfig = {
   build: {
     [isProd ? 'publicPath' : '']: publicPath,
     extractCSS: true,
-    babel: {
-      plugins: [
-        [
-          'component',
-          {
-            libraryName: 'element-ui',
-            styleLibraryName: 'theme-chalk',
-          },
-        ],
-      ],
-    },
-
     /*
      ** Run ESLint on save
      */
     extend(config, {isDev, isClient}) {
+      config.externals = {
+        'vue': 'Vue',
+        '@femessage/element-ui': 'ELEMENT'
+      }
       config.module.rules = config.module.rules.filter(item => !item.test.test('.svg'));
 
       config.module.rules.push({
@@ -168,7 +160,22 @@ const nuxtConfig = {
         rel: 'icon',
         type: 'image/x-icon',
       },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '//unpkg.com/@spaas/spaas-theme-chalk@2.12.3/lib/index.css'
+      }
     ],
+    script: [
+      {
+        type: 'text/javascript',
+        src: '//unpkg.com/vue/dist/vue.js',
+      },
+      {
+        type: 'text/javascript',
+        src: '//unpkg.com/@femessage/element-ui@2.12.3/lib/index.js',
+      }
+    ]
   },
   /*
    ** Customize the progress bar color

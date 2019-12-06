@@ -4,7 +4,7 @@ const program = require('commander')
 const Module = require('../dist/add/module').default
 
 program
-  .option('-C, --child', '子功能模块名称')
+  .option('-P, --path', '子功能模块路径')
   .parse(process.argv)
 
 const { child } = program

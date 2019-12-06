@@ -56,8 +56,16 @@ export default class Index {
       onlyFiles: true
     });
     const routes = filePath.reduce((pre, cur: any) => {
-      const file = require(cur).default
-      return pre.concat(file)
+      const file = require(cur).default;
+      const reg = /(?<=\/src\/)(.*?)(?=\/route.js)/;
+      const modulePath = cur.match(reg);
+      const targetRoutes = file.map(info => {
+        return {
+          ...info,
+          modulePath
+        }
+      })
+      return pre.concat(targetRoutes)
     }, []);
     // 生成对应的JSON文件
     this.setRouteAction(routes);

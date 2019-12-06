@@ -1,5 +1,5 @@
 <script>
-import {Submenu, MenuItem} from 'element-ui';
+import {Submenu, MenuItem} from '@femessage/element-ui';
 
 export default {
   name: 'MenuItem',

@@ -27,7 +27,7 @@ export function makeSureSPaaSTempPathExist() {
 
 interface ModuleOptions {
   moduleName: string,
-  childName: string,
+  path: string,
 }
 
 interface AskMethods {
@@ -42,7 +42,7 @@ export default class Index {
   }
 
   start() {
-    // 判断moduleName/childName是否为undefined
+    // 判断moduleName/path是否为undefined
     this.ask()
       .then(async (answers) => {
         this.conf = Object.assign(this.conf, answers)
@@ -90,10 +90,10 @@ export default class Index {
   }
 
   askChildName: AskMethods = function (conf, prompts) {
-    if (typeof conf.childName as string | undefined !== 'string') {
+    if (typeof conf.path as string | undefined !== 'string') {
       prompts.push({
         type: 'input',
-        name: 'childName',
+        name: 'path',
         message: '请输入安装的子模块名（如果不输入则默认为安装整个模块）！'
       })
     }
@@ -138,17 +138,17 @@ export default class Index {
 
     // 4、拷贝对应模块
     try {
-      const { childName } = this.conf;
+      const { path } = this.conf;
 
       const moduleSrc: object = require(modulePath);
       const targetPath = join(process.cwd(), `./${projectModuleDir}`, `./${moduleName}`);
-      if (childName) {
+      if (path) {
         // 下载符合需求的模块
-        const childModulePath = moduleSrc[childName]
+        const childModulePath = moduleSrc[path]
         // 查询模块列表
         if (childModulePath) {
           // 4、根据moduleSrc将代码cp到对应项目
-          const childTargetPath = join(targetPath, `./${childName}`);
+          const childTargetPath = join(targetPath, `.${path}`);
           await this.downloadModuleByPath(childModulePath, childTargetPath).then(() => {
             console.log(chalk.green(`👏 对应的模块已经安装到${childTargetPath}下，快去进行使用吧`))
           }).catch(() => {

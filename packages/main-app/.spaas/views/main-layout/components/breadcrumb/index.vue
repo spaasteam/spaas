@@ -25,7 +25,7 @@
   </el-breadcrumb>
 </template>
 <script>
-import {Breadcrumb, BreadcrumbItem} from 'element-ui';
+import {Breadcrumb, BreadcrumbItem} from '@femessage/element-ui';
 import Render from './render';
 
 export default {
