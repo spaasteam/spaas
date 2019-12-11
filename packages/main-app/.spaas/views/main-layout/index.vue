@@ -34,7 +34,7 @@
       </el-container>
     </el-container>
 
-    <copy-module />
+    <copy-module v-if="ifShowCopyModule" />
     <right-panel v-if="ifNotProduction">
       <settings />
     </right-panel>
@@ -76,8 +76,8 @@ export default {
   },
   data() {
     const {path, name} = this.$route;
-
     return {
+      ifShowCopyModule: process.env.COPY_MODULE,
       showAppOptions: true,
       hasHeader: path !== '/' && name !== 'all',
       hasAppOptions: hasSelectApp && path !== '/',
