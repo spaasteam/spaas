@@ -4,4 +4,4 @@ export const TEMP_DOWNLOAD_FLODER = 'spaas_temp'
 // 私有NPM地址
 export const PRIVATE_NPM = 'http://129.204.96.188:4873'
 
-export const UPDATE_PACKAGE_LIST = ['element-ui']
+export const UPDATE_PACKAGE_LIST = ['@spaas/cli']

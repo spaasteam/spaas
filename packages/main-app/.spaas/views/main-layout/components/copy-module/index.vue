@@ -3,7 +3,7 @@
     placement="top-start"
     title="下载此模块到本地项目"
     width="400"
-    trigger="click"
+    trigger="hover"
     v-if="modulePath"
   >
       <div class="inner-content">
@@ -26,7 +26,7 @@
 <script>
 import { Popover } from '@femessage/element-ui';
 import clipboard from '@/utils/clipboard';
-import PackageJson from '../../../../../package.json';
+import PackageJson from '@/../package.json';
 import routerJson from '@/const/route-info.json';
 
 export default {
@@ -36,7 +36,6 @@ export default {
   },
   data() {
     const { name } = PackageJson;
-    console.error(routerJson);
     return {
       moduleName: name,
       modulePath: '',

@@ -20,7 +20,7 @@ const templateFiles = [
   'yarn.lock',
 ];
 
-const templateDirs = ['src', 'main'];
+const templateDirs = ['modules', 'main'];
 
 const templateFilePaths = templateFiles.map(item => {
   let targetFileName = item.replace(/^\./g, '_');

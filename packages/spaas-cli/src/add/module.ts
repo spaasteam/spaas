@@ -27,21 +27,31 @@ export function makeSureSPaaSTempPathExist() {
 
 interface ModuleOptions {
   moduleName: string,
-  path: string,
+  path?: string,
 }
 
 interface AskMethods {
-  (conf: ModuleOptions, prompts: object[]): void
+  (conf: ModuleOptions, prompts: object[], moduleList?: string[]): void
 }
 
 export default class Index {
   public conf: ModuleOptions
-
+  public moduleList: string[]
   constructor(options: ModuleOptions) {
     this.conf = options;
+    const moduleList: string[] = [];
+    for (const item in ModuleGitUrl) {
+      moduleList.push(item);
+    }
+    this.moduleList = moduleList;
   }
 
   start() {
+    // 判断模块是否存在
+    const { moduleName } = this.conf;
+    if (moduleName) {
+      this.checkModuleIfExit(moduleName);
+    }
     // 判断moduleName/path是否为undefined
     this.ask()
       .then(async (answers) => {
@@ -54,11 +64,25 @@ export default class Index {
       })
   }
 
+  checkModuleIfExit(moduleName: string) {
+    let isInArr = false;
+    for(const item of this.moduleList) {
+      if(item === moduleName) {
+        isInArr = true;
+        break;
+      }
+    }
+    if(!isInArr) {
+      console.log(`${chalk.red('❌ ')}${chalk.grey(`该模块${moduleName}不存在`)}`);
+      process.exit(1);
+    }
+  }
+
   ask() {
     const prompts: object[] = []
     const conf = this.conf
 
-    this.askModuleName(conf, prompts)
+    this.askModuleName(conf, prompts, this.moduleList);
     this.askChildName(conf, prompts)
     return inquirer.prompt(prompts)
   }
@@ -73,18 +97,13 @@ export default class Index {
     return inquirer.prompt(prompts);
   }
 
-  askModuleName: AskMethods = function (conf, prompts) {
+  askModuleName: AskMethods = function (conf, prompts, moduleList) {
     if (typeof conf.moduleName as string | undefined !== 'string') {
       prompts.push({
-        type: 'input',
+        type: 'list',
         name: 'moduleName',
-        message: '请输入安装的模块名！',
-        validate(input) {
-          if (!input) {
-            return '模块名不能为空！'
-          }
-          return true
-        }
+        message: '请选择安装的模块名！',
+        choices: moduleList
       })
     }
   }
@@ -114,14 +133,15 @@ export default class Index {
     // 1、处理url
     const ctx = parseGitUrl(moduleRepsUrl);
     // 2、将对应的仓库下载下来
-    const spinner = ora(`⏬ clone git repo from ${ctx.repo}`).start();
+    console.log(`${chalk.green('⏬ ')}${chalk.gray(`clone git repo from ${ctx.repo}`)}`);
+    const spinner = ora().start();
     const moduleTempPath = makeSureSPaaSTempPathExist();
     try {
       await gitClone({
         ...ctx,
         moduleTempPath
       });
-      spinner.succeed();
+      spinner.succeed('模块下载成功！');
     } catch (e) {
       spinner.fail();
       throw new Error(e);

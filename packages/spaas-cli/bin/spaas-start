@@ -1,7 +1,0 @@
-#!/usr/bin/env node
-
-const Project = require('../dist/start/index').default
-
-const project = new Project()
-
-project.init()

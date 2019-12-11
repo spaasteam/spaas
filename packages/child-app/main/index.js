@@ -9,7 +9,7 @@ function resolve(dir) {
 }
 
 // 保留模块路径
-const filePath = fg.sync(resolve('../src/*'), {
+const filePath = fg.sync(resolve('../modules/*'), {
   onlyFiles: false,
   deep: 1,
 });
@@ -21,5 +21,5 @@ const modulesPath = filePath.reduce((obj, item) => {
   return obj;
 }, {});
 
-// 最终的数据格式为{ 'spaas-application': '/Users/barret/projects/spaas-console/src/spaas-application' }
+// 最终的数据格式为{ '/spaas-application': '/Users/barret/projects/spaas-console/src/spaas-application' }
 module.exports = modulesPath;

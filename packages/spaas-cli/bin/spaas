@@ -13,4 +13,5 @@ program
   .command('add [packages ...] [flags]', 'Add private packages of spaas')
   .command('start', 'start dev server')
   .command('nuxt', 'nuxt service')
+  .command('yarn', 'yarn private package')
   .parse(process.argv)

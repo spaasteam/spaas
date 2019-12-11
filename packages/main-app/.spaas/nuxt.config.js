@@ -23,7 +23,7 @@ const env = process.env;
 const isProd = env.MODE === 'prod';
 const publicPath = env.PUBLIC_PATH || './';
 
-const filePath = fg.sync(resolve('../src/**/route.js'), {
+const filePath = fg.sync(resolve('../modules/**/route.js'), {
   deep: 2,
   onlyFiles: true,
 });
