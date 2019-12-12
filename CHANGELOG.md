@@ -1,4 +1,19 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.1.1...v) (2019-11-27)
+# [](https://github.com/spaasteam/spaas/compare/v1.2.0...v) (2019-12-12)
+
+
+
+# [1.2.0](https://github.com/spaasteam/spaas/compare/v1.1.1...v1.2.0) (2019-12-12)
+
+
+### Features
+
+* childApp引入spaas/cli ([804aebb](https://github.com/spaasteam/spaas/commit/804aebba48abb6b39cfd9a7558fcafbf1b10c542))
+* v2功能改版 ([f985bd8](https://github.com/spaasteam/spaas/commit/f985bd8f09325a584c069e2bd2d9d26141924ae6))
+* 将功能模块化 ([fbf18a6](https://github.com/spaasteam/spaas/commit/fbf18a67631dffa522f23d1caa77606f4e54d96f))
+* 显示模块拷贝只在全局变量中加入COPY_MODULE才显示 ([6ae7987](https://github.com/spaasteam/spaas/commit/6ae79873253cc14b95b4d71128a02949f99a9e1e))
+* 更新主应用子应用模块 ([1cd6600](https://github.com/spaasteam/spaas/commit/1cd6600b1e1ef22a36e37bc537f7684202d8c04b))
+* 添加分支设置 ([58d94b5](https://github.com/spaasteam/spaas/commit/58d94b5060be7ac13c9319fcfef2b728959d8409))
+* 添加功能模块化安装功能 ([c76b775](https://github.com/spaasteam/spaas/commit/c76b775dcfee9af1906e82db88e11766f5df260e))
 
 
 

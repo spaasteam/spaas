@@ -81,7 +81,8 @@ const nuxtConfig = {
     extend(config, {isDev, isClient}) {
       config.externals = {
         'vue': 'Vue',
-        '@femessage/element-ui': 'ELEMENT'
+        '@femessage/element-ui': 'ELEMENT',
+        'element-ui': 'ELEMENT'
       }
       config.module.rules = config.module.rules.filter(item => !item.test.test('.svg'));
 
@@ -105,30 +106,30 @@ const nuxtConfig = {
               name: 'img/[name].[hash:8].[ext]',
             },
           },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              // bypassOnDebug: true, // webpack@1.x
-              disable: true, // webpack@2.x and newer
-            },
-          },
+          // {
+          //   loader: 'image-webpack-loader',
+          //   options: {
+          //     // bypassOnDebug: true, // webpack@1.x
+          //     disable: true, // webpack@2.x and newer
+          //   },
+          // },
         ],
       });
 
       // Run ESLint on save
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: {
-            cache: true,
-            fix: true,
-            quiet: true,
-          },
-        });
-      }
+      // if (isDev && isClient) {
+      //   config.module.rules.push({
+      //     enforce: 'pre',
+      //     test: /\.(js|vue)$/,
+      //     loader: 'eslint-loader',
+      //     exclude: /(node_modules)/,
+      //     options: {
+      //       cache: true,
+      //       fix: true,
+      //       quiet: true,
+      //     },
+      //   });
+      // }
       isProd && (config.output.publicPath = publicPath);
     },
   },
