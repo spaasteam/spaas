@@ -5,9 +5,10 @@ const Module = require('../dist/add/module').default
 
 program
   .option('-P, --path', '子功能模块路径')
+  .option('-b, --branch', '子功能模块路径')
   .parse(process.argv)
 
-const { path } = program;
+const { path, branch } = program;
 
 const args = program.args
 
@@ -18,7 +19,8 @@ if (ifModule) {
   // 2、判断是否有blockName
   const newModule = new Module({
     moduleName: args[1],
-    path
+    path,
+    branch
   });
   newModule.start();
 } else {

@@ -26,8 +26,9 @@ export function makeSureSPaaSTempPathExist() {
 }
 
 interface ModuleOptions {
-  moduleName: string,
+  moduleName?: string,
   path?: string,
+  branch?:string,
 }
 
 interface AskMethods {
@@ -37,8 +38,8 @@ interface AskMethods {
 export default class Index {
   public conf: ModuleOptions
   public moduleList: string[]
-  constructor(options: ModuleOptions) {
-    this.conf = options;
+  constructor(options?: ModuleOptions) {
+    this.conf = options || {};
     const moduleList: string[] = [];
     for (const item in ModuleGitUrl) {
       moduleList.push(item);
@@ -58,7 +59,7 @@ export default class Index {
         this.conf = Object.assign(this.conf, answers)
         await this.downModule(this.conf)
       })
-      .catch(err => console.log(chalk.red('模块下载失败 ', err)))
+      .catch(err => console.log(chalk.red('操作失败 ', err)))
       .finally(() => {
         process.exit(1)
       })
@@ -137,8 +138,10 @@ export default class Index {
     const spinner = ora().start();
     const moduleTempPath = makeSureSPaaSTempPathExist();
     try {
+      console.log(this.conf.branch);
       await gitClone({
         ...ctx,
+        branch: ctx.branch || this.conf.branch || 'master',
         moduleTempPath
       });
       spinner.succeed('模块下载成功！');

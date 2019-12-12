@@ -71,6 +71,7 @@ export async function gitClone(ctx: GitCtxOptions): Promise<void> {
     // 清除原来的目录
     fs.removeSync(targetPath);
   }
+  console.log(ctx);
   return execa(
     'git',
     ['clone', ctx.repo, ctx.id, '--single-branch', '--recurse-submodules', '-b', ctx.branch],
@@ -99,7 +100,7 @@ export function parseGitUrl(url: string): GitUrlParseOptions {
 
   return {
     repo,
-    branch: ref || 'feat-module',
+    branch: ref,
     path: `/${filepath}`,
     id: `${resource}/${fullName}`, // 唯一标识一个 git 仓库
   };
