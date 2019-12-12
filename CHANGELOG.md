@@ -1,4 +1,31 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.0.10...v) (2019-11-23)
+# [](https://github.com/spaasteam/spaas/compare/v1.1.1...v) (2019-11-27)
+
+
+
+## [1.1.1](https://github.com/spaasteam/spaas/compare/v1.1.0...v1.1.1) (2019-11-27)
+
+
+### Features
+
+* 更新主应用样式以及初始化模板 ([0b76526](https://github.com/spaasteam/spaas/commit/0b76526525aa00ce9939548c566cd9bcce271f2d))
+* 更新子应用初始化模板 ([cf0ab1c](https://github.com/spaasteam/spaas/commit/cf0ab1c75b42bb2369b1b32ea822e53e60106677))
+
+
+
+# [1.1.0](https://github.com/spaasteam/spaas/compare/v1.0.10...v1.1.0) (2019-11-26)
+
+
+### Bug Fixes
+
+* 去除没必要的console ([920956a](https://github.com/spaasteam/spaas/commit/920956a3624896c112ca83dcecd61781bebd1661))
+
+
+### Features
+
+* 将active背景色更改为主题色 ([cb4012e](https://github.com/spaasteam/spaas/commit/cb4012e085f9d0ba06a203fffe21bd6d77735e2e))
+* 更新头部样式以及侧边栏样式 ([9f2a49c](https://github.com/spaasteam/spaas/commit/9f2a49c06c3ec9cdc585e15216d016eed2619f18))
+* 更新首页样式 ([5a18d17](https://github.com/spaasteam/spaas/commit/5a18d17365563a9be62397acd3ea5f9eadd430e5))
+* 添加侧边菜单显示对应的图标 ([eb1b193](https://github.com/spaasteam/spaas/commit/eb1b19363e7b250b6d2b7640c3ae5171788ab062))
 
 
 

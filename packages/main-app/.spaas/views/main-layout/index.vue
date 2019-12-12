@@ -34,6 +34,7 @@
       </el-container>
     </el-container>
 
+    <copy-module v-if="ifShowCopyModule" />
     <right-panel v-if="ifNotProduction">
       <settings />
     </right-panel>
@@ -50,6 +51,7 @@ import VBreadcrumb from './components/breadcrumb';
 import AppOptions from './components/app-options';
 import Settings from './components/settings';
 import Sidebar from './components/sidebar.vue';
+import CopyModule from './components/copy-module/index.vue';
 
 import breadCrumbMixin from '@/mixins/breadcrubMixin';
 import {hasSelectApp} from '../../../spaas.config';
@@ -63,6 +65,7 @@ export default {
     AppOptions,
     Settings,
     RightPanel,
+    CopyModule
   },
   mixins: [breadCrumbMixin],
   props: {
@@ -73,8 +76,8 @@ export default {
   },
   data() {
     const {path, name} = this.$route;
-
     return {
+      ifShowCopyModule: process.env.COPY_MODULE,
       showAppOptions: true,
       hasHeader: path !== '/' && name !== 'all',
       hasAppOptions: hasSelectApp && path !== '/',

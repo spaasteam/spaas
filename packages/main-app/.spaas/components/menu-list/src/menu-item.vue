@@ -1,5 +1,5 @@
 <script>
-import {Submenu, MenuItem} from 'element-ui';
+import {Submenu, MenuItem} from '@femessage/element-ui';
 
 export default {
   name: 'MenuItem',
@@ -152,12 +152,12 @@ export default {
     }
     &:after {
       position: absolute;
-      top: 7px;
+      top: 8px;
       left: 12px;
       content: '';
       display: block;
       width: 174px;
-      height: 36px;
+      height: 34px;
       background:@primary-color;
       border-radius: 8px;
     }

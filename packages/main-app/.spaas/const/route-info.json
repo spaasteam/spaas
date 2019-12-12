@@ -2,11 +2,13 @@
   "/application-type": {
     "title": "应用管理",
     "appType": "2",
-    "enable": false
+    "enable": false,
+    "modulePath": "/spaas-application"
   },
   "/app-manage": {
     "title": "应用类型",
     "appType": "1",
-    "enable": true
+    "enable": true,
+    "modulePath": "/spaas-application"
   }
 }

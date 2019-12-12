@@ -24,6 +24,7 @@ package-lock.json
 
 # spaas
 .spaas
+.spaas_modules
 
 # template
 template
