@@ -80,10 +80,10 @@ const nuxtConfig = {
      */
     extend(config, {isDev, isClient}) {
       config.externals = {
-        'vue': 'Vue',
+        vue: 'Vue',
         '@femessage/element-ui': 'ELEMENT',
-        'element-ui': 'ELEMENT'
-      }
+        'element-ui': 'ELEMENT',
+      };
       config.module.rules = config.module.rules.filter(item => !item.test.test('.svg'));
 
       config.module.rules.push({
@@ -164,8 +164,8 @@ const nuxtConfig = {
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: '//unpkg.com/@spaas/spaas-theme-chalk@2.12.3/lib/index.css'
-      }
+        href: '//unpkg.com/@spaas/spaas-theme-chalk@2.12.3/lib/index.css',
+      },
     ],
     script: [
       {
@@ -175,8 +175,8 @@ const nuxtConfig = {
       {
         type: 'text/javascript',
         src: '//unpkg.com/@femessage/element-ui@2.12.3/lib/index.js',
-      }
-    ]
+      },
+    ],
   },
   /*
    ** Customize the progress bar color
@@ -206,6 +206,9 @@ const nuxtConfig = {
     },
     {
       src: '~/plugins/element',
+    },
+    {
+      src: '~/plugins/store',
     },
     {
       src: '~/plugins/router',
