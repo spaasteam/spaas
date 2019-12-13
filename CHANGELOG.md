@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.2.0...v) (2019-12-12)
+# [](https://github.com/spaasteam/spaas/compare/v1.2.1...v) (2019-12-12)
+
+
+
+## [1.2.1](https://github.com/spaasteam/spaas/compare/v1.2.0...v1.2.1) (2019-12-12)
+
+
+### Bug Fixes
+
+* 暂时隐藏两个功能问题 ([a90ad17](https://github.com/spaasteam/spaas/commit/a90ad1798af6f6b5512e3bf58b522c4743039057))
 
 
 
