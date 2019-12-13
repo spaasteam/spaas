@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.2.1...v) (2019-12-12)
+# [](https://github.com/spaasteam/spaas/compare/v1.2.2...v) (2019-12-13)
+
+
+
+## [1.2.2](https://github.com/spaasteam/spaas/compare/v1.2.1...v1.2.2) (2019-12-13)
+
+
+### Features
+
+* 支持子模块独自注册store ([077b3b1](https://github.com/spaasteam/spaas/commit/077b3b1d53a816f18f3b00bf0bbcc7264b2d9b87))
 
 
 
