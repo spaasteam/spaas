@@ -137,10 +137,10 @@ export default {
       width: 200px;
       padding-left: 24px;
 
-      >span {
+      > span {
         padding: 0 10px;
         font-weight: 300;
-        font-size:26px;
+        font-size: 26px;
         color: #fff;
       }
     }

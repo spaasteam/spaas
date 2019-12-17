@@ -6,25 +6,22 @@
     trigger="hover"
     v-if="modulePath"
   >
-      <div class="inner-content">
-        <pre class="inner-pre">
+    <div class="inner-content">
+      <pre class="inner-pre">
           <code class="copy-module-code" ref="code">npx spaas add module {{ moduleName }} --path={{ modulePath }}</code>
         </pre>
-        <div
-          class="copy-code-button"
-          @click="handleClipboard($refs.code.innerHTML, $event)"
-        >
-          <i class="el-icon-copy-document"></i>
-        </div>
+      <div class="copy-code-button" @click="handleClipboard($refs.code.innerHTML, $event)">
+        <i class="el-icon-copy-document"></i>
       </div>
-      <div class="copy-module" slot="reference">
-        <i class="el-icon-download"></i>
-      </div>
-    </el-popover>
+    </div>
+    <div class="copy-module" slot="reference">
+      <i class="el-icon-download"></i>
+    </div>
+  </el-popover>
 </template>
 
 <script>
-import { Popover } from '@femessage/element-ui';
+import {Popover} from '@femessage/element-ui';
 import clipboard from '@/utils/clipboard';
 import PackageJson from '@/../package.json';
 import routerJson from '@/const/route-info.json';
@@ -32,20 +29,20 @@ import routerJson from '@/const/route-info.json';
 export default {
   name: 'dowloadButton',
   components: {
-    ElPopover: Popover
+    ElPopover: Popover,
   },
   data() {
-    const { name } = PackageJson;
+    const {name} = PackageJson;
     return {
       moduleName: name,
       modulePath: '',
-    }
+    };
   },
   watch: {
     $route: {
       handler() {
         const {path} = this.$route;
-        const { modulePath } = routerJson[path] || {}
+        const {modulePath} = routerJson[path] || {};
         this.modulePath = modulePath;
       },
       immediate: true,
@@ -56,7 +53,7 @@ export default {
       clipboard(text, event);
     },
   },
-}
+};
 </script>
 
 <style lang="less">
@@ -116,7 +113,7 @@ export default {
     padding: 0;
     line-height: inherit;
     display: inline-block;
-    color: #1890FF;
+    color: #1890ff;
     text-decoration: none;
     outline: none;
     cursor: pointer;

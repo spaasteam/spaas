@@ -114,13 +114,13 @@ export const actions = {
       const productList = payload.content;
       const [product] = productList.filter(item => item.productName === meta.spaName);
       if (!product) return;
-      const { productId: centerId, icon } = product;
+      const {productId: centerId, icon} = product;
       dispatch('fetchMenu', centerId, {root: true});
 
       commit('update', {
         permission: {
           centerId,
-          spaIcon: icon
+          spaIcon: icon,
         },
       });
     } catch (error) {

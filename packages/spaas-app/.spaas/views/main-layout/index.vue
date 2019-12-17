@@ -65,7 +65,7 @@ export default {
     AppOptions,
     Settings,
     RightPanel,
-    CopyModule
+    CopyModule,
   },
   mixins: [breadCrumbMixin],
   props: {
@@ -96,11 +96,11 @@ export default {
         this.hasHeader = path !== '/' && name !== 'all';
         this.showAppOptions = true;
         this.$nextTick(() => {
-          this.hasAppOptions = hasSelectApp && path !== '/' && this.showAppOptions
-        })
+          this.hasAppOptions = hasSelectApp && path !== '/' && this.showAppOptions;
+        });
       },
       immediate: true,
-    }
+    },
   },
   methods: {
     changeShowStatus(ifShow) {

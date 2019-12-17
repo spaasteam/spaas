@@ -17,5 +17,5 @@ exports.default = [
     title: '应用类型',
     appType: '0',
     enable: true,
-  }
+  },
 ];
