@@ -136,6 +136,7 @@ export default {
       align-items: center;
       width: 200px;
       padding-left: 24px;
+      cursor: default;
 
       > span {
         padding: 0 10px;
