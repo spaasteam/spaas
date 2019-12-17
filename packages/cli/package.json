@@ -30,12 +30,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD:packages/cli/package.json
     "@spaas/spaas-app": "1.2.1",
-=======
-    "@spaas/child-app": "1.2.2",
-    "@spaas/main-app": "1.2.2",
->>>>>>> master:packages/spaas-cli/package.json
     "@types/fs-extra": "^8.0.1",
     "adm-zip": "^0.4.13",
     "chalk": "^2.4.2",
