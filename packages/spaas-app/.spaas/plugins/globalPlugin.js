@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import dayjs from 'dayjs';
-import { MessageBox } from '@femessage/element-ui';
+import {MessageBox} from '@femessage/element-ui';
 import '@/icons/index';
 
 export default function({store}) {

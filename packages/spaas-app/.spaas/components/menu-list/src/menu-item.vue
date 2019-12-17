@@ -52,7 +52,7 @@ export default {
         {
           props: {
             index: `${this.data.id}`,
-            'popper-class': 'popover-menu'
+            'popper-class': 'popover-menu',
           },
         },
         [Content, childrens],
@@ -132,7 +132,6 @@ export default {
 }
 
 .el-menu-item {
-
   .menu-item-icon {
     z-index: 99;
   }
@@ -159,7 +158,7 @@ export default {
       width: 174px;
       height: 34px;
       margin-top: -17px;
-      background:@primary-color;
+      background: @primary-color;
       border-radius: 8px;
     }
   }
@@ -230,7 +229,8 @@ export default {
 }
 
 .popover-menu {
-  .el-menu-item, .el-submenu__title{
+  .el-menu-item,
+  .el-submenu__title {
     height: 50px;
     line-height: 50px;
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <img :src="introductionImg" alt="业务中台"/>
+    <img :src="introductionImg" alt="业务中台" />
   </div>
 </template>
 
@@ -12,8 +12,8 @@ export default {
   data() {
     return {
       introductionImg,
-    }
-  }
+    };
+  },
 };
 </script>
 
@@ -26,7 +26,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  >img {
+  > img {
     width: 523px;
     height: 132px;
   }

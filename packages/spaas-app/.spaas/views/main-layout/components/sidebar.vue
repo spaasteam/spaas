@@ -59,7 +59,7 @@ export default {
     },
     appIcon() {
       return this.permission.spaIcon;
-    }
+    },
   },
   methods: {
     toggleCollapse() {
@@ -119,11 +119,11 @@ export default {
     position: relative;
     display: flex;
     align-items: center;
-    >img {
+    > img {
       width: 23px;
       height: 23px;
     }
-    >span {
+    > span {
       min-width: 154px;
       margin-left: 6px;
       overflow: hidden;

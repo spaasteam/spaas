@@ -17,7 +17,6 @@
         </el-option>
       </el-select>
     </div>
-
   </div>
 </template>
 
@@ -32,7 +31,7 @@ export default {
   data() {
     return {
       loading: false,
-      labelText: '请选择'
+      labelText: '请选择',
     };
   },
   computed: {
@@ -128,32 +127,31 @@ export default {
 }
 
 .select-container {
-    position: relative;
-    display: inline-block;
-    padding-right: 20px;
-    min-width: 100px;
-    max-width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    height: 32px;
-    line-height: 32px;
+  position: relative;
+  display: inline-block;
+  padding-right: 20px;
+  min-width: 100px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 32px;
+  line-height: 32px;
 
-    .select-icon {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
-    .select {
-      min-width: 200px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      opacity: 0;
-    }
-
+  .select-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
+
+  .select {
+    min-width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+  }
+}
 </style>

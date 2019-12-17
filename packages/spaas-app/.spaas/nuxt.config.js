@@ -105,7 +105,7 @@ const nuxtConfig = {
               limit: 10000, // 1K limit
               name: 'img/[name].[hash:8].[ext]',
             },
-          }
+          },
         ],
       });
 
@@ -216,7 +216,7 @@ const nuxtConfig = {
       {
         path: './',
       },
-    ]
+    ],
   ],
   axios,
 };
