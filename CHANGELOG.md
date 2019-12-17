@@ -1,4 +1,19 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.2.2...v) (2019-12-13)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.0...v) (2019-12-17)
+
+
+
+# [1.3.0](https://github.com/spaasteam/spaas/compare/v1.2.2...v1.3.0) (2019-12-17)
+
+
+### Bug Fixes
+
+* 处理代码冲突问题 ([3a59651](https://github.com/spaasteam/spaas/commit/3a5965143554294f2ee24fc85e16a3f4c150cf27))
+
+
+### Features
+
+* 将主应用与子应用整合,方便调试 ([27685cf](https://github.com/spaasteam/spaas/commit/27685cfe887d2f0c498635befa3561f27cd32079))
+* 添加主应用以及模块demo ([2800030](https://github.com/spaasteam/spaas/commit/28000301317f6a71062d6a82a251c71afea2f15e))
 
 
 
