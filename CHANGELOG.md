@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.0...v) (2019-12-17)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.1...v) (2019-12-17)
+
+
+
+## [1.3.1](https://github.com/spaasteam/spaas/compare/v1.3.0...v1.3.1) (2019-12-17)
+
+
+### Bug Fixes
+
+* 更改模块名称 ([478b45a](https://github.com/spaasteam/spaas/commit/478b45a6f8e08d6c3a366a205c3d957a41c8c373))
 
 
 
