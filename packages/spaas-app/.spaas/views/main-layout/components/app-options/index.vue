@@ -45,7 +45,7 @@ export default {
       get() {
         const appId = this.$store.state.app.appId;
         const [currentApp] = this.appList.filter(({value}) => value === appId);
-        this.labelText = currentApp ? currentApp.label : '';
+        this.labelText = currentApp ? currentApp.label : '请选择';
         return appId && Number(appId);
       },
       set(value) {
