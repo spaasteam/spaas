@@ -10,6 +10,8 @@ interface IndexOptions {
 }
 
 const DEFAULT_CONFIG_PATH = './.spaas/nuxt.config.js';
+const SVG_ICON_PATH = './.spaas/icons/svg';
+
 export default class Index {
   public conf: IndexOptions
   public _argv: string[]
@@ -36,6 +38,8 @@ export default class Index {
     try {
       await this.cloneMainApp(Template.dir);
       this.createRouterFile();
+      // 将模块中的icons全部拷贝到.spaas/icons/svg文件夹下
+      this.copyIcons();
       this.runNuxtCommand();
     } catch (err) {
       console.error(err);
@@ -115,8 +119,18 @@ export default class Index {
       routerInfoJson[routePath.replace(/_/g, ':')] = item;
     })
 
-    console.log(routerInfoJson);
     fs.writeFileSync(navPath, JSON.stringify(routerInfoJson, null, '   '), 'utf-8');
+  }
+
+  // 将模块中的icons全部拷贝到.spaas/icons/svg文件夹下
+  copyIcons() {
+    const filePath = fg.sync(path.join(process.cwd(), '/modules/**/icons'), {
+      deep: 2,
+      onlyDirectories: true
+    });
+    filePath.forEach(item => {
+      fs.copySync(item, SVG_ICON_PATH);
+    });
   }
 
   /**
@@ -124,7 +138,6 @@ export default class Index {
    */
   runNuxtCommand() {
     const command = this._argv.join(' ');
-    console.log(command);
     const nuxtCommand = `npx nuxt ${command}`
 
     const child = exec(nuxtCommand)
