@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.1...v) (2019-12-17)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.2...v) (2019-12-17)
+
+
+
+## [1.3.2](https://github.com/spaasteam/spaas/compare/v1.3.1...v1.3.2) (2019-12-17)
+
+
+### Bug Fixes
+
+* 优化交互细节 ([cbd13f9](https://github.com/spaasteam/spaas/commit/cbd13f9a1c4ff80f828662069611044ebdd6c8da))
 
 
 
