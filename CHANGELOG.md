@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.2...v) (2019-12-17)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.3...v) (2019-12-18)
+
+
+
+## [1.3.3](https://github.com/spaasteam/spaas/compare/v1.3.2...v1.3.3) (2019-12-18)
+
+
+### Features
+
+* 处理icons引入问题 ([5d2dd69](https://github.com/spaasteam/spaas/commit/5d2dd69918090a08133241ccbea37a3677040dee))
 
 
 
