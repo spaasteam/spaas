@@ -157,17 +157,17 @@ const nuxtConfig = {
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: '//unpkg.com/@spaas/spaas-theme-chalk@2.12.3/lib/index.css',
+        href: '//cdn.jsdelivr.net/npm/@spaas/spaas-theme-chalk@2.12.3/lib/index.css',
       },
     ],
     script: [
       {
         type: 'text/javascript',
-        src: '//unpkg.com/vue/dist/vue.js',
+        src: '//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js',
       },
       {
         type: 'text/javascript',
-        src: '//unpkg.com/@femessage/element-ui@2.12.3/lib/index.js',
+        src: '//cdn.jsdelivr.net/npm/@femessage/element-ui@2.12.3/lib/index.js',
       },
     ],
   },
