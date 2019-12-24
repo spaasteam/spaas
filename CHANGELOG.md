@@ -1,4 +1,14 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.3...v) (2019-12-18)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.4...v) (2019-12-23)
+
+
+
+## [1.3.4](https://github.com/spaasteam/spaas/compare/v1.3.3...v1.3.4) (2019-12-23)
+
+
+### Features
+
+* 处理window路径读取问题 ([73eff45](https://github.com/spaasteam/spaas/commit/73eff45f5cfcb698376f44526b3e27834a0aab83))
+* 更新spaas update module提示 ([22e7f24](https://github.com/spaasteam/spaas/commit/22e7f24670de490bc74e6c9f52b8d15c260a0c5e))
 
 
 
