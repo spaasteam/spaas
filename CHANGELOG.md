@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.4...v) (2019-12-23)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.5...v) (2019-12-24)
+
+
+
+## [1.3.5](https://github.com/spaasteam/spaas/compare/v1.3.4...v1.3.5) (2019-12-24)
+
+
+### Bug Fixes
+
+* 调整npm源 ([3c6b1a6](https://github.com/spaasteam/spaas/commit/3c6b1a694a716284c3886e813c3e96f6a522e5e4))
 
 
 
