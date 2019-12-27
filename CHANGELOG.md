@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.5...v) (2019-12-24)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.6...v) (2019-12-24)
+
+
+
+## [1.3.6](https://github.com/spaasteam/spaas/compare/v1.3.5...v1.3.6) (2019-12-24)
+
+
+### Bug Fixes
+
+* 处理文件相对路径的问题 ([d651a98](https://github.com/spaasteam/spaas/commit/d651a9879ad81abe064a86516380ad037e0c5688))
 
 
 
