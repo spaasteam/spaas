@@ -37,7 +37,7 @@
     "commander": "^3.0.2",
     "download-git-repo": "^3.0.2",
     "execa": "^4.0.0",
-    "fast-glob": "^3.1.0",
+    "fast-glob": "^2.2.6",
     "fs-extra": "^8.1.0",
     "git-url-parse": "^11.1.2",
     "inquirer": "^7.0.0",
