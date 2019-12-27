@@ -1,4 +1,22 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.6...v) (2019-12-24)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.8...v) (2019-12-27)
+
+
+
+## [1.3.8](https://github.com/spaasteam/spaas/compare/v1.3.7...v1.3.8) (2019-12-27)
+
+
+### Bug Fixes
+
+* 取消execa的TS提示 ([9bea6dd](https://github.com/spaasteam/spaas/commit/9bea6dd4a3feb36c300a34cbc5d75554adcc41f4))
+
+
+
+## [1.3.7](https://github.com/spaasteam/spaas/compare/v1.3.6...v1.3.7) (2019-12-27)
+
+
+### Bug Fixes
+
+* 补全execa依赖 ([39fbf0a](https://github.com/spaasteam/spaas/commit/39fbf0aace1ba9d726c9859b64bc3f798e691e4e))
 
 
 
