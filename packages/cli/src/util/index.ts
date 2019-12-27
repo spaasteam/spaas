@@ -71,8 +71,8 @@ export async function gitClone(ctx: GitCtxOptions): Promise<void> {
     // 清除原来的目录
     fs.removeSync(targetPath);
   }
-  console.log(ctx);
-  return execa(
+  const anyFn: any = execa;
+  return anyFn(
     'git',
     ['clone', ctx.repo, ctx.id, '--single-branch', '--recurse-submodules', '-b', ctx.branch],
     {
