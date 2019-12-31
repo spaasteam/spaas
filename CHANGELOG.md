@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.8...v) (2019-12-27)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.9...v) (2019-12-27)
+
+
+
+## [1.3.9](https://github.com/spaasteam/spaas/compare/v1.3.8...v1.3.9) (2019-12-27)
+
+
+### Features
+
+* 更改fast-glob版本 ([07ceb56](https://github.com/spaasteam/spaas/commit/07ceb5665e5f806e0be3fe4e131ae4e8cf1a6816))
 
 
 
