@@ -3,7 +3,10 @@
 	"version": "1.3.3",
 	"description": "Nuxt2 + element UI project",
 	"author": "spaasteam",
-	"license": "MIT",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
 	"keywords": [
 		"vue",
 		"element-ui",

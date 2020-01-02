@@ -29,6 +29,9 @@
   ],
   "author": "",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@spaas/spaas-app": "1.3.3",
     "@types/fs-extra": "^8.0.1",
