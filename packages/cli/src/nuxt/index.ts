@@ -124,7 +124,7 @@ export default class Index {
 
   // 将模块中的icons全部拷贝到.spaas/icons/svg文件夹下
   copyIcons() {
-    const filePath = fg.sync(path.join(process.cwd(), '/modules/**/icons'), {
+    const filePath:string[] = fg.sync(path.join(process.cwd(), '/modules/**/icons'), {
       deep: 2,
       onlyDirectories: true
     });
