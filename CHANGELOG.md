@@ -1,4 +1,18 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.9...v) (2019-12-27)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.10...v) (2020-01-02)
+
+
+
+## [1.3.10](https://github.com/spaasteam/spaas/compare/v1.3.9...v1.3.10) (2020-01-02)
+
+
+### Bug Fixes
+
+* 处理首次发版404 ([0b8d2e6](https://github.com/spaasteam/spaas/commit/0b8d2e6ec24990a9e436718ad0f5089c229ebe18))
+
+
+### Features
+
+* 补充ts ([6ddec5a](https://github.com/spaasteam/spaas/commit/6ddec5add2f9f71423fddf4a47bd8158eef9c43f))
 
 
 
