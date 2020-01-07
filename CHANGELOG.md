@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.10...v) (2020-01-02)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.11...v) (2020-01-07)
+
+
+
+## [1.3.11](https://github.com/spaasteam/spaas/compare/v1.3.10...v1.3.11) (2020-01-07)
+
+
+### Features
+
+* 兼容接入serverless ([9211cb2](https://github.com/spaasteam/spaas/commit/9211cb207517f46f16131f8f056142ba271f52f3))
 
 
 
