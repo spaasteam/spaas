@@ -22,15 +22,7 @@ function resolve(dir) {
 const env = process.env;
 const isProd = env.MODE === 'prod';
 
-const ifExitAppJson = Boolean(fg.sync(resolve('../app.json')).length);
-let appJson = {};
-if (ifExitAppJson) {
-  appJson = require('../app.json');
-}
-const publicPath =
-  process.env.BUILD_TYPE === 'production'
-    ? `http://serverless-platform.deepexi.top/applications/${appJson.appKey}`
-    : env.PUBLIC_PATH || './';
+const publicPath = env.PUBLIC_PATH || './';
 
 const filePath = fg.sync(resolve('../modules/**/route.js'), {
   deep: 2,
