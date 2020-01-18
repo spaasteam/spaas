@@ -9,7 +9,7 @@
  * * @Strong 这是一个路由中间件，请不要在 serverMiddleware 中使用 *
  * **********************************************************
  */
-
+import Vue from 'vue';
 import cookie from 'js-cookie';
 import cookieKeys from '@/const/cookie-keys';
 
@@ -57,7 +57,18 @@ export default async ({store, redirect, env, route}) => {
     store.commit('update', cookieInfo);
     try {
       await store.dispatch('getUserInfo');
-      await store.dispatch('fetchAppId');
+      const ifHasPromise = await store.dispatch('fetchAppId');
+      if (!ifHasPromise) {
+        Vue.$notify.error({
+          title: '暂无权限',
+          message: '请联系管理员开通权限',
+          duration: 3000,
+          onClose: () => {
+            store.commit('logout');
+          },
+        });
+        return;
+      }
     } catch (e) {
       console.error('auth error: ', e);
     }

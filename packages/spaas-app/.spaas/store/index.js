@@ -106,26 +106,23 @@ export const actions = {
   },
   // 请求中心Id
   async fetchAppId({dispatch, commit}) {
-    try {
-      const {payload} = await getProductList({
-        status: 3,
-        productName: meta.spaName,
-      });
-      const productList = payload.content;
-      const [product] = productList.filter(item => item.productName === meta.spaName);
-      if (!product) return;
-      const {productId: centerId, icon} = product;
-      dispatch('fetchMenu', centerId, {root: true});
+    const {payload} = await getProductList({
+      status: 3,
+      productName: meta.spaName,
+    });
+    const productList = payload.content;
+    const [product] = productList.filter(item => item.productName === meta.spaName);
+    if (!product) return;
+    const {productId: centerId, icon} = product;
+    dispatch('fetchMenu', centerId, {root: true});
 
-      commit('update', {
-        permission: {
-          centerId,
-          spaIcon: icon,
-        },
-      });
-    } catch (error) {
-      return error;
-    }
+    commit('update', {
+      permission: {
+        centerId,
+        spaIcon: icon,
+      },
+    });
+    return product;
   },
   // 请求菜单
   async fetchMenu({commit}, appId) {
