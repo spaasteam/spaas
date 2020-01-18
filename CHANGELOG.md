@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.11...v) (2020-01-07)
+# [](https://github.com/spaasteam/spaas/compare/v1.3.12...v) (2020-01-07)
+
+
+
+## [1.3.12](https://github.com/spaasteam/spaas/compare/v1.3.11...v1.3.12) (2020-01-07)
+
+
+### Features
+
+* 恢复接入serverless代码 ([b63ac37](https://github.com/spaasteam/spaas/commit/b63ac371905c2422bbef34444213286b6a4d6689))
 
 
 
