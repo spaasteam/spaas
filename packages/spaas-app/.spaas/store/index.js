@@ -8,7 +8,8 @@
 import cookie from 'js-cookie';
 import cookieKeys from '@/const/cookie-keys';
 
-import {loginByUsername, getProductList, getMenu, getUserDetail} from '@/services/v1/deepexi-cloud';
+import {loginByUsername, getMenu, getUserDetail} from '@/services/v1/deepexi-cloud';
+import {getProductList} from '@/services/v1/asset-service';
 
 import meta from '@/const/meta.js';
 
@@ -107,13 +108,12 @@ export const actions = {
   // 请求中心Id
   async fetchAppId({dispatch, commit}) {
     const {payload} = await getProductList({
-      status: 3,
-      productName: meta.spaName,
+      status: 1,
     });
-    const productList = payload.content;
+    const productList = payload;
     const [product] = productList.filter(item => item.productName === meta.spaName);
     if (!product) return;
-    const {productId: centerId, icon} = product;
+    const {id: centerId, icon} = product;
     dispatch('fetchMenu', centerId, {root: true});
 
     commit('update', {

@@ -7,10 +7,12 @@ module.exports = {
   mock: {
     '/spaas-application-center': mockServer,
     '/deepexi-cloud': mockServer,
+    '/asset-service': mockServer,
   },
   dev: {
     '/spaas-application-center': apiServer,
     '/deepexi-cloud': apiServer,
     '/deepexi-domain-staff': apiServer,
+    '/asset-service': apiServer,
   },
 };
