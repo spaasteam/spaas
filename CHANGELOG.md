@@ -1,4 +1,22 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.3.12...v) (2020-01-07)
+# [](https://github.com/spaasteam/spaas/compare/v1.4.0...v) (2020-02-08)
+
+
+
+# [1.4.0](https://github.com/spaasteam/spaas/compare/v1.3.13...v1.4.0) (2020-02-08)
+
+
+### Features
+
+* 修改deepexi-cloud的接口 ([19f2f1a](https://github.com/spaasteam/spaas/commit/19f2f1a8a12fea12ed5814d8de4b45b35dbd4278))
+
+
+
+## [1.3.13](https://github.com/spaasteam/spaas/compare/v1.3.12...v1.3.13) (2020-01-18)
+
+
+### Bug Fixes
+
+* 处理用户没开通中心右侧菜单空白问题 ([7e5856b](https://github.com/spaasteam/spaas/commit/7e5856bb5ac60ccbadcad03b4d4dab0753547078))
 
 
 
