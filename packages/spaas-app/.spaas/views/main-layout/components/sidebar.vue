@@ -10,7 +10,7 @@
     <el-menu
       v-loading="!permission.menuReady"
       :collapse="setting.collapse"
-      :default-active="$route.path"
+      :default-active="$route.meta.menu_sign || $route.path"
       :collapse-transition="false"
       router
       class="aside-menu"
