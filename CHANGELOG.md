@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.4.0...v) (2020-02-08)
+# [](https://github.com/spaasteam/spaas/compare/v1.4.1...v) (2020-02-10)
+
+
+
+## [1.4.1](https://github.com/spaasteam/spaas/compare/v1.4.0...v1.4.1) (2020-02-10)
+
+
+### Bug Fixes
+
+* 用meta属性修复左侧菜单激活问题 ([9178dc7](https://github.com/spaasteam/spaas/commit/9178dc7e1c1ffef3192e683da175b02b27256821))
 
 
 
