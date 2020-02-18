@@ -33,6 +33,7 @@ export const state = () => ({
     spaName: meta.spaName,
     spaIcon: '',
     centerId: '',
+    productList: [],
   },
 
   setting: {
@@ -110,7 +111,7 @@ export const actions = {
     const {payload} = await getProductList({
       status: 1,
     });
-    const productList = payload;
+    const productList = payload || [];
     const [product] = productList.filter(item => item.productName === meta.spaName);
     if (!product) return;
     const {id: centerId, icon} = product;
@@ -120,6 +121,7 @@ export const actions = {
       permission: {
         centerId,
         spaIcon: icon,
+        productList,
       },
     });
     return product;
