@@ -141,6 +141,7 @@ export default {
     position: relative;
     box-sizing: border-box;
     background: @main-bg;
+    margin-top: 10px;
   }
 
   .nuxt-content {
@@ -148,8 +149,11 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    margin-bottom: 40px;
-    padding: 20px 20px 10px;
+    margin: 0 20px 40px;
+    background-color: #fff;
+    > div {
+      padding: 20px;
+    }
   }
 
   .footer-container {
@@ -163,10 +167,10 @@ export default {
     min-height: calc(100vh - 100px);
   }
   .small-height {
-    min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 160px);
   }
   .min-height {
-    min-height: calc(100vh - 190px);
+    min-height: calc(100vh - 200px);
   }
 }
 </style>
