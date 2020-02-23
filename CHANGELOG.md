@@ -1,4 +1,18 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.4.1...v) (2020-02-10)
+# [](https://github.com/spaasteam/spaas/compare/v1.4.2...v) (2020-02-18)
+
+
+
+## [1.4.2](https://github.com/spaasteam/spaas/compare/v1.4.1...v1.4.2) (2020-02-18)
+
+
+### Bug Fixes
+
+* vuex中添加productList变量 ([f070f16](https://github.com/spaasteam/spaas/commit/f070f161f4fe48c0af726b6f7c246581d5040966))
+
+
+### Features
+
+* 更新changelog ([0cdf911](https://github.com/spaasteam/spaas/commit/0cdf9117ed696ab4242e4a545aba5922ad1bfeb9))
 
 
 
