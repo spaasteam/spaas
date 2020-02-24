@@ -95,7 +95,10 @@ export default function({$axios, store}) {
     if (store.state.token) {
       config.headers.common.Authorization = `Bearer ${store.state.token}`;
     }
-
+    const centerId = store.state.permission.centerId;
+    if (centerId !== '') {
+      config.headers.common.appId = centerId;
+    }
     const params = {
       tenantId: store.state.tenantId,
       userId: store.state.userId,

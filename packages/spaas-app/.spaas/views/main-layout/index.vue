@@ -25,7 +25,7 @@
               'min-height': hasHeader && hasAppOptions,
             }"
           >
-            <nuxt></nuxt>
+            <nuxt v-if="centerId !== ''"></nuxt>
             <el-footer class="footer-container" height="40px">
               <copyright></copyright>
             </el-footer>
@@ -87,6 +87,9 @@ export default {
     ...mapState(['permission', 'setting']),
     appName() {
       return this.permission.spaName;
+    },
+    centerId() {
+      return this.permission.centerId;
     },
   },
   watch: {
