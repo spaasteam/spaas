@@ -167,7 +167,7 @@ export default {
   }
 
   .medium-height {
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 130px);
   }
   .small-height {
     min-height: calc(100vh - 160px);
