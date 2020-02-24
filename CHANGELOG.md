@@ -1,4 +1,22 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.4.2...v) (2020-02-18)
+# [](https://github.com/spaasteam/spaas/compare/v1.5.1...v) (2020-02-24)
+
+
+
+## [1.5.1](https://github.com/spaasteam/spaas/compare/v1.5.0...v1.5.1) (2020-02-24)
+
+
+### Features
+
+* 所有请求头都带上appId ([5401958](https://github.com/spaasteam/spaas/commit/540195808152f9d2e802f37ccbec51c0641a1736))
+
+
+
+# [1.5.0](https://github.com/spaasteam/spaas/compare/v1.4.2...v1.5.0) (2020-02-23)
+
+
+### Features
+
+* 更新changelog ([b3da179](https://github.com/spaasteam/spaas/commit/b3da1791f2a36715408812745c49bb4d8b39296e))
 
 
 
