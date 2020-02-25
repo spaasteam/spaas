@@ -51,7 +51,7 @@ const remindOrExit = (() => {
     const status = resp.status;
     let message = '';
 
-    if (status === 401 || status === 403) {
+    if (status === 401) {
       const {exp, msg} = data;
       // exp: 'exceeds maximum allowed expiration';
       // message: "No credentials found for given 'iss'";

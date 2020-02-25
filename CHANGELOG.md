@@ -1,4 +1,8 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.5.1...v) (2020-02-24)
+# [](https://github.com/spaasteam/spaas/compare/v1.5.2...v) (2020-02-24)
+
+
+
+## [1.5.2](https://github.com/spaasteam/spaas/compare/v1.5.1...v1.5.2) (2020-02-24)
 
 
 
