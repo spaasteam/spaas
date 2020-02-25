@@ -23,8 +23,8 @@
 <script>
 import routeInfo from '@/const/route-info';
 
-const NONE = '2';
-const DISABLED = '3';
+const NONE = '0'; // 1: 显示；0：隐藏
+const DISABLED = false; // true: 启用；false: 禁用
 
 export default {
   name: 'app-options',
@@ -64,7 +64,7 @@ export default {
     },
     isDisabled() {
       const curInfo = routeInfo[this.matchedPath];
-      return curInfo && curInfo.appType === DISABLED;
+      return curInfo && curInfo.enable === DISABLED;
     },
     hasHide() {
       const curInfo = routeInfo[this.matchedPath];
