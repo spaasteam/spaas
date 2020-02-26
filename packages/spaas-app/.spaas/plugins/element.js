@@ -89,3 +89,6 @@ Vue.prototype.$alert = MessageBox.alert;
 Vue.prototype.$confirm = MessageBox.confirm;
 Vue.prototype.$prompt = MessageBox.prompt;
 Vue.prototype.$message = Message;
+
+// 显示Vue-tools
+Vue.config.devtools = process.env && process.env.NODE_ENV !== 'production' ? true : false;
