@@ -2,7 +2,6 @@ import Vue from 'vue';
 import dayjs from 'dayjs';
 import {MessageBox, MessageBoxCenter} from '@femessage/element-ui';
 import '@/icons/index';
-import processConst from './process';
 
 const formatTime = (val, format = 'YYYY-MM-DD HH:mm:ss') => {
   return val ? dayjs(val).format(format) : '';
@@ -102,10 +101,7 @@ export default function({store}) {
       },
     },
     filters: {
-      formatTime,
-      processEnum(val, listKey) {
-        return getLabel(processConst[listKey], val);
-      },
+      formatTime
     },
     methods: {
       formatTime,
