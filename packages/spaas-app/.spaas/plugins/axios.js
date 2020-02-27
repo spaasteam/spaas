@@ -103,6 +103,7 @@ export default function({$axios, store}) {
       tenantId: store.state.tenantId,
       userId: store.state.userId,
       appId: store.state.app.appId,
+      caseId: store.state.app.appId,
       _: new Date().getTime(),
     };
     // 去除空值

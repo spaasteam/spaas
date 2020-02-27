@@ -1,4 +1,16 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.5.3...v) (2020-02-25)
+# [](https://github.com/spaasteam/spaas/compare/v1.5.4...v) (2020-02-26)
+
+
+
+## [1.5.4](https://github.com/spaasteam/spaas/compare/v1.5.3...v1.5.4) (2020-02-26)
+
+
+### Bug Fixes
+
+* 修复拷贝svg文件后无法读取bug ([ef44f30](https://github.com/spaasteam/spaas/commit/ef44f309c78531f6eba17054a758bb0267c9d7da))
+* 修复模块化后改造子应用不显示VueTools ([7a205ce](https://github.com/spaasteam/spaas/commit/7a205ce8150ac575af6a01bf22132b34103975ad))
+* 修复选择应用无法禁用和隐藏 ([f10bdfc](https://github.com/spaasteam/spaas/commit/f10bdfc2e7e159d844dd56a3ac34a80ee2826d52))
+* 还原appOptions文件 ([d201d68](https://github.com/spaasteam/spaas/commit/d201d68f2bcf75779a20aa609a5398420f4f617d))
 
 
 
