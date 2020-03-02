@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.5.4...v) (2020-02-26)
+# [](https://github.com/spaasteam/spaas/compare/v1.5.5...v) (2020-02-27)
+
+
+
+## [1.5.5](https://github.com/spaasteam/spaas/compare/v1.5.4...v1.5.5) (2020-02-27)
+
+
+### Bug Fixes
+
+* 处理消息中心需要在所有请求头中加入caseId ([89b59e1](https://github.com/spaasteam/spaas/commit/89b59e1a601fa28501fead51fda2f830f7cbc439))
 
 
 
