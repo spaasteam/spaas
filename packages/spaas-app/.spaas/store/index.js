@@ -2,8 +2,8 @@
  * @Description: vuex store
  * @Author: barret
  * @Date: 2019-08-13 17:18:05
- * @LastEditTime: 2019-08-13 17:19:11
- * @LastEditors: barret
+ * @LastEditTime: 2020-03-06 17:13:10
+ * @LastEditors: Please set LastEditors
  */
 import cookie from 'js-cookie';
 import cookieKeys from '@/const/cookie-keys';
@@ -12,16 +12,17 @@ import {loginByUsername, getMenu, getUserDetail} from '@/services/v1/deepexi-clo
 import {getProductList} from '@/services/v1/asset-service';
 
 import meta from '@/const/meta.js';
+import ENV from '@/envconfig/config';
 
-const cookiePath = process.env.COOKIE_PATH;
-const cookieDomain = process.env.COOKIE_DOMAIN;
+const cookiePath = ENV.COOKIE_PATH;
+const cookieDomain = ENV.COOKIE_DOMAIN;
 
 const isObject = value => Object.prototype.toString.call(value) === '[object Object]';
 
 export const state = () => ({
-  userId: '',
+  userId: ENV.USERID ? ENV.USERID : '',
   token: '',
-  tenantId: '',
+  tenantId: ENV.TENANTID ? ENV.TENANTID : '',
   username: '',
   user: {},
 
@@ -29,7 +30,7 @@ export const state = () => ({
 
   permission: {
     menuList: [],
-    menuReady: false,
+    menuReady: ENV.BUILD_TYPE == ENV.BUILD_TYPE_PRIVATE ? true : false,
     spaName: meta.spaName,
     spaIcon: '',
     centerId: '',
