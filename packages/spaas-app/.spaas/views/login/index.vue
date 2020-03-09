@@ -106,31 +106,38 @@ export default {
   },
   methods: {
     login() {
-      this.$refs.loginForm.validate(valid => {
-        if (valid) {
-          this.loading = true;
+      if (this.ENV.BUILD_TYPE == this.ENV.BUILD_TYPE_PRIVATE) {
+        this.$store.commit('login', {
+          token: this.ENV.TOKEN,
+        });
+        this.$router.replace('/');
+      } else {
+        this.$refs.loginForm.validate(valid => {
+          if (valid) {
+            this.loading = true;
 
-          const params = {
-            username: this.form.username,
-            password: this.form.password,
-            channel: 'pc',
-            enterpriseId: this.form.enterpriseId,
-          };
-          this.$store
-            .dispatch('loginByUsername', params)
-            .then(() => {
-              this.loading = false;
-              this.$router.replace('/');
-            })
-            .catch(e => {
-              // TODO 异常处理
-              this.loading = false;
-              console.log(e);
-            });
-        } else {
-          return false;
-        }
-      });
+            const params = {
+              username: this.form.username,
+              password: this.form.password,
+              channel: 'pc',
+              enterpriseId: this.form.enterpriseId,
+            };
+            this.$store
+              .dispatch('loginByUsername', params)
+              .then(() => {
+                this.loading = false;
+                this.$router.replace('/');
+              })
+              .catch(e => {
+                // TODO 异常处理
+                this.loading = false;
+                console.log(e);
+              });
+          } else {
+            return false;
+          }
+        });
+      }
     },
 
     toSignUp() {

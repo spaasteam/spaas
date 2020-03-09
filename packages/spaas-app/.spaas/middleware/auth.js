@@ -23,54 +23,61 @@ const whiteList = [LOGIN_PATH, '/icons'];
 export default async ({store, redirect, env, route}) => {
   if (process.server) return;
 
-  const {NO_LOGIN} = env;
+  const {NO_LOGIN, BUILD_TYPE, BUILD_TYPE_PRIVATE} = env;
   const {path} = route;
-
   const cookieInfo = {};
 
-  cookieKeys.forEach(key => {
-    cookieInfo[key] = cookie.get(key);
-  });
+  if ((!!BUILD_TYPE && BUILD_TYPE) !== BUILD_TYPE_PRIVATE) {
+    cookieKeys.forEach(key => {
+      cookieInfo[key] = cookie.get(key);
+    });
 
-  const {token} = cookieInfo;
+    const {token} = cookieInfo;
 
-  // 开发时可以用 NO_LOGIN 跳过路由鉴权
-  if (NO_LOGIN > 0) return;
+    // 开发时可以用 NO_LOGIN 跳过路由鉴权
+    if (NO_LOGIN > 0) return;
 
-  // 鉴权白名单
-  if (whiteList.indexOf(path) > -1) return;
+    // 鉴权白名单
+    if (whiteList.indexOf(path) > -1) return;
 
-  // 只允许开发中打开icons页面
-  if (process.env.MODE === 'prod' && path === ICONS_PATH) {
-    redirect(INDEX_PATH);
-    return;
-  }
-
-  // 未登录
-  if (!token) {
-    redirect(LOGIN_PATH);
-    return;
-  }
-
-  // 已登录但是state因刷新丢失
-  if (store.state.userId === '') {
-    store.commit('update', cookieInfo);
-    try {
-      await store.dispatch('getUserInfo');
-      const ifHasPromise = await store.dispatch('fetchAppId');
-      if (!ifHasPromise) {
-        Vue.$notify.error({
-          title: '暂无权限',
-          message: '请联系管理员开通权限',
-          duration: 3000,
-          onClose: () => {
-            store.commit('logout');
-          },
-        });
-        return;
-      }
-    } catch (e) {
-      console.error('auth error: ', e);
+    // 只允许开发中打开icons页面
+    if (process.env.MODE === 'prod' && path === ICONS_PATH) {
+      redirect(INDEX_PATH);
+      return;
     }
+
+    // 未登录
+    if (!token) {
+      redirect(LOGIN_PATH);
+      return;
+    }
+
+    // 已登录但是state因刷新丢失
+    if (store.state.userId === '') {
+      store.commit('update', cookieInfo);
+      try {
+        await store.dispatch('getUserInfo');
+        const ifHasPromise = await store.dispatch('fetchAppId');
+        if (!ifHasPromise) {
+          Vue.$notify.error({
+            title: '暂无权限',
+            message: '请联系管理员开通权限',
+            duration: 3000,
+            onClose: () => {
+              store.commit('logout');
+            },
+          });
+          return;
+        }
+      } catch (e) {
+        console.error('auth error: ', e);
+      }
+    }
+  } else {
+    //私有化改造
+    if (!cookie.get('token')) {
+      redirect(LOGIN_PATH);
+    }
+    store.dispatch('fetchAppId');
   }
 };
