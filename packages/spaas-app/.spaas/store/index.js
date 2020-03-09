@@ -2,7 +2,7 @@
  * @Description: vuex store
  * @Author: barret
  * @Date: 2019-08-13 17:18:05
- * @LastEditTime: 2020-03-06 17:13:10
+ * @LastEditTime: 2020-03-09 16:32:30
  * @LastEditors: Please set LastEditors
  */
 import cookie from 'js-cookie';
@@ -10,31 +10,33 @@ import cookieKeys from '@/const/cookie-keys';
 
 import {loginByUsername, getMenu, getUserDetail} from '@/services/v1/deepexi-cloud';
 import {getProductList} from '@/services/v1/asset-service';
+import {productList, menuList} from '@/const/config';
 
 import meta from '@/const/meta.js';
 import ENV from '@/envconfig/config';
 
 const cookiePath = ENV.COOKIE_PATH;
 const cookieDomain = ENV.COOKIE_DOMAIN;
+const isPrivate = ENV.BUILD_TYPE == ENV.BUILD_TYPE_PRIVATE;
 
 const isObject = value => Object.prototype.toString.call(value) === '[object Object]';
 
 export const state = () => ({
-  userId: ENV.USERID ? ENV.USERID : '',
+  userId: isPrivate && ENV.USERID ? ENV.USERID : '',
   token: '',
-  tenantId: ENV.TENANTID ? ENV.TENANTID : '',
+  tenantId: isPrivate && ENV.TENANTID ? ENV.TENANTID : '',
   username: '',
   user: {},
 
   meta: {},
 
   permission: {
-    menuList: [],
-    menuReady: ENV.BUILD_TYPE == ENV.BUILD_TYPE_PRIVATE ? true : false,
+    menuList: isPrivate && menuList ? menuList.payload : [],
+    menuReady: isPrivate ? true : false,
     spaName: meta.spaName,
     spaIcon: '',
     centerId: '',
-    productList: [],
+    productList: isPrivate && productList ? productList.payload : [],
   },
 
   setting: {
@@ -109,14 +111,22 @@ export const actions = {
   },
   // 请求中心Id
   async fetchAppId({dispatch, commit}) {
-    const {payload} = await getProductList({
-      status: 1,
-    });
-    const productList = payload || [];
+    let res;
+    if (isPrivate) {
+      res = productList || {};
+    } else {
+      res = await getProductList({
+        status: 1,
+      });
+    }
+    const productList = res.payload || [];
     const [product] = productList.filter(item => item.productName === meta.spaName);
     if (!product) return;
     const {id: centerId, icon} = product;
-    dispatch('fetchMenu', centerId, {root: true});
+    !isPrivate &&
+      dispatch('fetchMenu', centerId, {
+        root: true,
+      });
 
     commit('update', {
       permission: {
