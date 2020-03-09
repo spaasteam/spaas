@@ -2,7 +2,7 @@
  * @Description: vuex store
  * @Author: barret
  * @Date: 2019-08-13 17:18:05
- * @LastEditTime: 2020-03-09 16:32:30
+ * @LastEditTime: 2020-03-09 17:05:36
  * @LastEditors: Please set LastEditors
  */
 import cookie from 'js-cookie';
@@ -10,7 +10,7 @@ import cookieKeys from '@/const/cookie-keys';
 
 import {loginByUsername, getMenu, getUserDetail} from '@/services/v1/deepexi-cloud';
 import {getProductList} from '@/services/v1/asset-service';
-import {productList, menuList} from '@/const/config';
+import {productList, menuList} from '../../config';
 
 import meta from '@/const/meta.js';
 import ENV from '@/envconfig/config';

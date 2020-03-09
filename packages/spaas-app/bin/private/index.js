@@ -5,7 +5,7 @@ const fs = require('fs');
 
 // 文件配置
 const fileName = 'config.js';
-const filePath = './.spaas/const';
+const filePath = './';
 const fileConfig = `${filePath}/${fileName}`;
 
 if (process.env.BUILD_TYPE !== 'private') {
