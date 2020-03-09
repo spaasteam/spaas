@@ -49,6 +49,21 @@ import {mapMutations} from 'vuex';
 export default {
   name: 'LayoutHead',
   data() {
+    const headMenu =
+      this.ENV.BUILD_TYPE == this.ENV.BUILD_TYPE_PRIVATE
+        ? []
+        : [
+            {
+              name: '控制台',
+              type: 'console',
+              url: '/spaas-console/index.html',
+            },
+            {
+              name: '帮助中心',
+              type: 'resources',
+              url: `/spaas-console/index.html#/document?documentName=${appName}`,
+            },
+          ];
     const currentHref = this.getCurrentPath();
     return {
       url: currentHref,
@@ -60,18 +75,7 @@ export default {
         },
       ],
       searchType: 'default',
-      headMenu: [
-        {
-          name: '控制台',
-          type: 'console',
-          url: '/spaas-console/index.html',
-        },
-        {
-          name: '帮助中心',
-          type: 'resources',
-          url: `/spaas-console/index.html#/document?documentName=${appName}`,
-        },
-      ],
+      headMenu: headMenu,
     };
   },
   props: {
@@ -129,6 +133,7 @@ export default {
   .fixed-head {
     display: flex;
     width: 100%;
+    height: 60px;
     background: rgba(45, 48, 59, 1);
     .head-logo {
       display: flex;

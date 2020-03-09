@@ -2,8 +2,10 @@ import Vue from 'vue';
 import dayjs from 'dayjs';
 import {MessageBox} from '@femessage/element-ui';
 import '@/icons/index';
+import ENV from '@/envconfig/config';
 
 export default function({store}) {
+  Vue.prototype.ENV = ENV;
   Vue.mixin({
     computed: {
       appId() {

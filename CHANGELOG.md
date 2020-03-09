@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.5.5...v) (2020-02-27)
+# [](https://github.com/spaasteam/spaas/compare/v1.6.0...v) (2020-03-02)
+
+
+
+# [1.6.0](https://github.com/spaasteam/spaas/compare/v1.5.5...v1.6.0) (2020-03-02)
+
+
+### Features
+
+* 使得全局查询参数能够被覆盖 ([9c996a0](https://github.com/spaasteam/spaas/commit/9c996a0002743e07a2bcc788223e35fcdde15b5c))
 
 
 
