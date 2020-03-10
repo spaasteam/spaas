@@ -1,7 +1,7 @@
 import {appName} from '../../spaas.config';
 
 const meta = {
-  favicon: 'https://bucket-cdn-prd.oss-cn-shenzhen.aliyuncs.com/spaas-favcion/goods.ico', // 需要根据应用来更改对应的图标
+  favicon: 'https://bucket-cdn-prd.oss-cn-shenzhen.aliyuncs.com/spaas-favcion/spaas.ico', // 需要根据应用来更改对应的图标
 
   // 登录表单上的图片
   logoLogin:
