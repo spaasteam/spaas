@@ -3,7 +3,7 @@
     <div class="fixed-head">
       <h1 class="head-logo">
         <svg-icon icon-class="logo" />
-        <span>SPaaS</span>
+        <span :class="{'micr-font': isWin}">SPaaS</span>
       </h1>
       <!-- 头部菜单 -->
       <div class="head-menu">
@@ -45,10 +45,12 @@
 <script>
 import {appName} from '../../spaas.config';
 import {mapMutations} from 'vuex';
+import {detectOS} from '../utils/utils';
 
 export default {
   name: 'LayoutHead',
   data() {
+    const isWin = detectOS() === 'Win';
     const headMenu =
       this.ENV.BUILD_TYPE == this.ENV.BUILD_TYPE_PRIVATE
         ? []
@@ -75,7 +77,8 @@ export default {
         },
       ],
       searchType: 'default',
-      headMenu: headMenu,
+      headMenu,
+      isWin,
     };
   },
   props: {
@@ -148,6 +151,11 @@ export default {
         font-weight: 300;
         font-size: 26px;
         color: #fff;
+      }
+
+      .micr-font {
+        font-family: 'Microsoft YaHei';
+        font-weight: 400;
       }
     }
 
