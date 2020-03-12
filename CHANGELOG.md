@@ -1,4 +1,30 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.6.0...v) (2020-03-02)
+# [](https://github.com/spaasteam/spaas/compare/v1.7.1...v) (2020-03-10)
+
+
+
+## [1.7.1](https://github.com/spaasteam/spaas/compare/v1.7.0...v1.7.1) (2020-03-10)
+
+
+### Features
+
+* 更换项目的favicon.ico ([733bc02](https://github.com/spaasteam/spaas/commit/733bc02409fb776e2a3f8045ca424936db5012b9))
+* 根据环境来设置logo的字体 ([f458072](https://github.com/spaasteam/spaas/commit/f45807275b12fb6c8f37a95f1da027332a725d0f))
+
+
+
+# [1.7.0](https://github.com/spaasteam/spaas/compare/v1.6.0...v1.7.0) (2020-03-09)
+
+
+### Bug Fixes
+
+* 修改写入config路径 ([52b7121](https://github.com/spaasteam/spaas/commit/52b71213ee86377b8148eaf8baa99224258fac4f))
+* 删除无用包 ([495cd76](https://github.com/spaasteam/spaas/commit/495cd7680c5c4530594bab3c10f2cebfff1b65f5))
+
+
+### Features
+
+* 新增私有化部署 ([3ad41a9](https://github.com/spaasteam/spaas/commit/3ad41a9c3caab706ed5c58567439ad22b58edf44))
+* 私有化改造 ([a833812](https://github.com/spaasteam/spaas/commit/a833812d7f842045b37438f18c2a4053a14eb631))
 
 
 
