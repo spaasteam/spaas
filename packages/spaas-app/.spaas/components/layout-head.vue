@@ -2,8 +2,13 @@
   <div class="layout-Head">
     <div class="fixed-head">
       <h1 class="head-logo">
-        <svg-icon icon-class="logo" />
-        <span>SPaaS</span>
+        <template v-if="isCutsom">
+          {{ isCutsom }}
+        </template>
+        <template v-else>
+          <svg-icon icon-class="logo" />
+          <span>SPaaS</span>
+        </template>
       </h1>
       <!-- 头部菜单 -->
       <div class="head-menu">
@@ -17,6 +22,9 @@
             <span class="button-container">{{ item.name }}</span>
           </li>
         </ul>
+        <div class="menu-right" v-if="isCutsomRight">
+          {{ isCutsomRight }}
+        </div>
       </div>
       <div class="head-right">
         <div class="head-active">
@@ -45,12 +53,13 @@
 <script>
 import {appName} from '../../spaas.config';
 import {mapMutations} from 'vuex';
+import ENV from '@/envconfig/config';
 
 export default {
   name: 'LayoutHead',
   data() {
-    const headMenu =
-      this.ENV.BUILD_TYPE == this.ENV.BUILD_TYPE_PRIVATE
+    const headMenu = !this.ENV.LOGO_TITLE
+      ? this.ENV.BUILD_TYPE == this.ENV.BUILD_TYPE_PRIVATE
         ? []
         : [
             {
@@ -63,7 +72,24 @@ export default {
               type: 'resources',
               url: `/spaas-console/index.html#/document?documentName=${appName}`,
             },
-          ];
+          ]
+      : [
+          {
+            name: '能力编排',
+            type: 'orchestrate',
+            url: '/spaas-orchestrate-console/index.html',
+          },
+          {
+            name: '流程引擎',
+            type: 'workflow',
+            url: '/spaas-workflow-console/index.html',
+          },
+          {
+            name: '帮助中心',
+            type: 'docs',
+            url: `/spaas-console/index.html#/document?documentName=${appName}`,
+          },
+        ];
     const currentHref = this.getCurrentPath();
     return {
       url: currentHref,
@@ -75,7 +101,7 @@ export default {
         },
       ],
       searchType: 'default',
-      headMenu: headMenu,
+      headMenu,
     };
   },
   props: {
@@ -89,6 +115,12 @@ export default {
     },
   },
   computed: {
+    isCutsomRight() {
+      return !!ENV.HEAD_DEC && ENV.HEAD_DEC;
+    },
+    isCutsom() {
+      return !!ENV.LOGO_TITLE && ENV.LOGO_TITLE;
+    },
     userName() {
       return this.$store.state.username || 'sPaaS';
     },
@@ -133,7 +165,6 @@ export default {
   .fixed-head {
     display: flex;
     width: 100%;
-    height: 60px;
     background: rgba(45, 48, 59, 1);
     .head-logo {
       display: flex;
@@ -141,8 +172,9 @@ export default {
       align-items: center;
       width: 200px;
       padding-left: 24px;
-      cursor: default;
-
+      font-size: 15px;
+      color: #fff;
+      cursor: pointer;
       > span {
         padding: 0 10px;
         font-weight: 300;
@@ -153,14 +185,19 @@ export default {
 
     .head-menu {
       flex: 1;
-
+      display: flex;
+      justify-content: space-between;
+      padding: 0 30px 0 0;
+      align-items: center;
+      background: #2d303b;
+      height: 60px;
       ul {
         img {
           width: 100%;
           height: 100%;
         }
 
-        background-color: rgb(0, 21, 41);
+        background: #2d303b;
         color: @headMenu;
         font-size: 14px;
 
@@ -198,6 +235,9 @@ export default {
             }
           }
         }
+      }
+      .menu-right {
+        color: #fff;
       }
     }
 
