@@ -60,8 +60,8 @@ export default {
   name: 'LayoutHead',
   data() {
     const isWin = detectOS() === 'Win';
-    const headMenu =
-      this.ENV.BUILD_TYPE == this.ENV.BUILD_TYPE_PRIVATE
+    const headMenu = !this.ENV.LOGO_TITLE
+      ? this.ENV.BUILD_TYPE == this.ENV.BUILD_TYPE_PRIVATE
         ? []
         : [
             {
