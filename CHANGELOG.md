@@ -1,4 +1,69 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.5.2...v) (2020-02-24)
+# [](https://github.com/spaasteam/spaas/compare/v1.7.1...v) (2020-03-10)
+
+
+
+## [1.7.1](https://github.com/spaasteam/spaas/compare/v1.7.0...v1.7.1) (2020-03-10)
+
+
+### Features
+
+* 更换项目的favicon.ico ([733bc02](https://github.com/spaasteam/spaas/commit/733bc02409fb776e2a3f8045ca424936db5012b9))
+* 根据环境来设置logo的字体 ([f458072](https://github.com/spaasteam/spaas/commit/f45807275b12fb6c8f37a95f1da027332a725d0f))
+
+
+
+# [1.7.0](https://github.com/spaasteam/spaas/compare/v1.6.0...v1.7.0) (2020-03-09)
+
+
+### Bug Fixes
+
+* 修改写入config路径 ([52b7121](https://github.com/spaasteam/spaas/commit/52b71213ee86377b8148eaf8baa99224258fac4f))
+* 删除无用包 ([495cd76](https://github.com/spaasteam/spaas/commit/495cd7680c5c4530594bab3c10f2cebfff1b65f5))
+
+
+### Features
+
+* 新增私有化部署 ([3ad41a9](https://github.com/spaasteam/spaas/commit/3ad41a9c3caab706ed5c58567439ad22b58edf44))
+* 私有化改造 ([a833812](https://github.com/spaasteam/spaas/commit/a833812d7f842045b37438f18c2a4053a14eb631))
+
+
+
+# [1.6.0](https://github.com/spaasteam/spaas/compare/v1.5.5...v1.6.0) (2020-03-02)
+
+
+### Features
+
+* 使得全局查询参数能够被覆盖 ([9c996a0](https://github.com/spaasteam/spaas/commit/9c996a0002743e07a2bcc788223e35fcdde15b5c))
+
+
+
+## [1.5.5](https://github.com/spaasteam/spaas/compare/v1.5.4...v1.5.5) (2020-02-27)
+
+
+### Bug Fixes
+
+* 处理消息中心需要在所有请求头中加入caseId ([89b59e1](https://github.com/spaasteam/spaas/commit/89b59e1a601fa28501fead51fda2f830f7cbc439))
+
+
+
+## [1.5.4](https://github.com/spaasteam/spaas/compare/v1.5.3...v1.5.4) (2020-02-26)
+
+
+### Bug Fixes
+
+* 修复拷贝svg文件后无法读取bug ([ef44f30](https://github.com/spaasteam/spaas/commit/ef44f309c78531f6eba17054a758bb0267c9d7da))
+* 修复模块化后改造子应用不显示VueTools ([7a205ce](https://github.com/spaasteam/spaas/commit/7a205ce8150ac575af6a01bf22132b34103975ad))
+* 修复选择应用无法禁用和隐藏 ([f10bdfc](https://github.com/spaasteam/spaas/commit/f10bdfc2e7e159d844dd56a3ac34a80ee2826d52))
+* 还原appOptions文件 ([d201d68](https://github.com/spaasteam/spaas/commit/d201d68f2bcf75779a20aa609a5398420f4f617d))
+
+
+
+## [1.5.3](https://github.com/spaasteam/spaas/compare/v1.5.2...v1.5.3) (2020-02-25)
+
+
+### Features
+
+* 更改403状态为无权限不会重跳转 ([86f2566](https://github.com/spaasteam/spaas/commit/86f25662f5f5175c5b0a8235955b06cb3624a6ad))
 
 
 

@@ -54,12 +54,14 @@
 import {appName} from '../../spaas.config';
 import {mapMutations} from 'vuex';
 import ENV from '@/envconfig/config';
+import {detectOS} from '../utils/utils';
 
 export default {
   name: 'LayoutHead',
   data() {
-    const headMenu = !this.ENV.LOGO_TITLE
-      ? this.ENV.BUILD_TYPE == this.ENV.BUILD_TYPE_PRIVATE
+    const isWin = detectOS() === 'Win';
+    const headMenu =
+      this.ENV.BUILD_TYPE == this.ENV.BUILD_TYPE_PRIVATE
         ? []
         : [
             {
@@ -102,6 +104,7 @@ export default {
       ],
       searchType: 'default',
       headMenu,
+      isWin,
     };
   },
   props: {
@@ -180,6 +183,11 @@ export default {
         font-weight: 300;
         font-size: 26px;
         color: #fff;
+      }
+
+      .micr-font {
+        font-family: 'Microsoft YaHei';
+        font-weight: 400;
       }
     }
 

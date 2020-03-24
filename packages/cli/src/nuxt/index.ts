@@ -11,6 +11,9 @@ interface IndexOptions {
 
 const DEFAULT_CONFIG_PATH = './.spaas/nuxt.config.js';
 const SVG_ICON_PATH = './.spaas/icons/svg';
+const DEFAULT_EXTEND_CONFIG_PATH: string = './config/index.js';
+const CONFIG_DIR: string = './config';
+const DEFAULT_CONFIG_INDEX_PATH = './.spaas/config/index.js';
 
 export default class Index {
   public conf: IndexOptions
@@ -38,6 +41,7 @@ export default class Index {
     try {
       await this.cloneMainApp(Template.dir);
       this.createRouterFile();
+      this.createDefaultConfigFile();
       // 将模块中的icons全部拷贝到.spaas/icons/svg文件夹下
       this.copyIcons();
       this.runNuxtCommand();
@@ -84,6 +88,18 @@ export default class Index {
     const normalArr = this.arr2DToNormal(routes);
     // 生成对应的JSON文件
     this.setRouteAction(normalArr);
+  }
+
+  /**
+   * 创建默认的config文件
+   */
+  createDefaultConfigFile = () => {
+    const filePath = path.join(process.cwd(), DEFAULT_EXTEND_CONFIG_PATH);
+    const dirPath = path.join(process.cwd(), CONFIG_DIR);
+    const sourceFilePath = path.join(process.cwd(), DEFAULT_CONFIG_INDEX_PATH);
+    if (fs.existsSync(filePath)) return;
+    fs.ensureDirSync(dirPath);
+    return fs.copyFileSync(sourceFilePath, filePath)
   }
 
   arr2DToNormal = arr2D => {

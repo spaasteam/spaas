@@ -90,8 +90,14 @@ const remindOrExit = (() => {
 
 export default function({$axios, store}) {
   $axios.onRequest(config => {
-    let url = config.url;
+    const url = config.url;
     // jwt 验证
+    const urlArr = url.split('?');
+    const queryStr = urlArr[1] || '';
+    const targetUrl = urlArr[0];
+
+    const paramObj = qs.parse(queryStr, {delimiter: '&'}) || {};
+
     if (store.state.token) {
       config.headers.common.Authorization = `Bearer ${store.state.token}`;
     }
@@ -103,7 +109,9 @@ export default function({$axios, store}) {
       tenantId: store.state.tenantId,
       userId: store.state.userId,
       appId: store.state.app.appId,
+      caseId: store.state.app.appId,
       _: new Date().getTime(),
+      ...paramObj,
     };
     // 去除空值
     for (const i in params) {
@@ -112,10 +120,8 @@ export default function({$axios, store}) {
       }
     }
 
-    url += url.indexOf('?') > -1 ? '&' : '?';
-    url += qs.stringify(params);
-
-    config.url = url;
+    const resultUrl = `${targetUrl}?${qs.stringify(params)}`;
+    config.url = resultUrl;
 
     return config;
   });
