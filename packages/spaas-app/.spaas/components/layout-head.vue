@@ -7,7 +7,7 @@
         </template>
         <template v-else>
           <svg-icon icon-class="logo" />
-          <span>SPaaS</span>
+          <span :class="{'micr-font': isWin}">SPaaS</span>
         </template>
       </h1>
       <!-- 头部菜单 -->
