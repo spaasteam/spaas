@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.7.1...v) (2020-03-10)
+# [](https://github.com/spaasteam/spaas/compare/v1.7.2...v) (2020-03-12)
+
+
+
+## [1.7.2](https://github.com/spaasteam/spaas/compare/v1.7.1...v1.7.2) (2020-03-12)
+
+
+### Bug Fixes
+
+* 处理默认配置文件不存在的问题 ([1258c3a](https://github.com/spaasteam/spaas/commit/1258c3a24e90a605bc16eac065ba4bcd52d69481))
 
 
 
