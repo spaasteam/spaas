@@ -10,4 +10,6 @@ export default {
   USERID: process.env.USERID,
   TENANTID: process.env.TENANTID,
   TOKEN: process.env.TOKEN,
+  LOGO_TITLE: process.env.LOGO_TITLE, //logo标题
+  HEAD_DEC: process.env.HEAD_DEC, //头部右边介绍
 };
