@@ -1,0 +1,21 @@
+{
+  "payload": {
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50SWQiOiIxZGY0NmI1MjFlM2M0Yjk5YmVhODMyMmRiODI0NDBmMiIsInRlbmFudElkIjoiYTYwZmMzNjE0ZDU0NDFiNGIzZjk5MDhkOWM5NTcyNDMiLCJjaGFubmVsIjpudWxsLCJpc3MiOiJrUXQ0dWF6ZVRYcVdMcHJmRFZLOW16YkNwNXJRN1BGeSIsInBhcmFtcyI6eyJuaWNrbmFtZSI6InNhYXMiLCJhZG1pbiI6dHJ1ZSwidXNlcklkIjoyMzUxfSwiZXhwIjoxNTg2NzY4MjczLCJpYXQiOjE1ODY3NjEwNzN9.Yz-3N_E51SQMJg-RZs3GwTWuEkdW0jM92EnNwd52Nmk",
+    "params": {
+      "nickname": "saas",
+      "admin": true,
+      "userId": 2351
+    },
+    "id": "1df46b521e3c4b99bea8322db82440f2",
+    "tenantId": "a60fc3614d5441b4b3f9908d9c957243",
+    "username": "saas",
+    "status": 0,
+    "phone": "18888888888",
+    "email": "18888888888@qq.com",
+    "avatar": "",
+    "isConfirmAgreement": true,
+    "createdTime": "1570741933000"
+  },
+  "code": "0",
+  "msg": "ok"
+}

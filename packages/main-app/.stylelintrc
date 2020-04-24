@@ -1,0 +1,8 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "no-empty-source": null,
+    "declaration-block-trailing-semicolon": null,
+    "declaration-block-semicolon-space-after": null
+  }
+}
