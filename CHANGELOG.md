@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.7.2...v) (2020-03-12)
+# [](https://github.com/spaasteam/spaas/compare/v1.8.0...v) (2020-03-25)
+
+
+
+# [1.8.0](https://github.com/spaasteam/spaas/compare/v1.7.2...v1.8.0) (2020-03-25)
+
+
+### Features
+
+* 修改头部内容 ([#33](https://github.com/spaasteam/spaas/issues/33)) ([a10a82d](https://github.com/spaasteam/spaas/commit/a10a82dce8ab39106ebe65b96508f5a5ed99b693))
 
 
 
