@@ -12,7 +12,8 @@
     "release:lerna": "lerna publish --force-publish=* --exact --temp-tag",
     "release:beta": "lerna publish --force-publish=* --exact --temp-tag  --preid=beta --npm-tag=beta",
     "release": "npm-run-all release:lerna changelog",
-    "pub": "sh ./build/pub.sh"
+    "pub": "sh ./build/pub.sh",
+    "commit": "npx git-cz"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
@@ -24,6 +25,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-vue": "^6.0.1",
+    "git-cz": "^4.3.1",
     "github-release-notes": "^0.17.0",
     "husky": "^3.0.9",
     "lerna": "^3.18.1",
