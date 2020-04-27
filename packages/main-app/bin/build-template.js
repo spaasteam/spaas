@@ -43,11 +43,33 @@ templateDirs.forEach(item => {
 // 3、处理package,将其处理为_开头的模板json文件
 const packagePath = path.join(targetPath, '_package.json');
 const packageMap = require(packagePath);
+const cliVersion = packageMap.version;
+
 packageMap.name = '<%= name %>';
 packageMap.version = '<%= version %>';
 packageMap.description = '<%= description %>';
 delete packageMap.main;
+
+// 1. 将package中的version读取
+// 2. 将"@spaas/cli": "^"写入到dependencies
+// 3. 更换scripts dev 与 build命令
+packageMap.dependencies["@spaas/cli"] = `^${cliVersion}`;
+packageMap.scripts.dev = "spaas start main-app && vue-cli-service serve";
+packageMap.scripts.build = "spaas start main-app && vue-cli-service build";
+const filePath = path.join(process.cwd(), '.gitignore');
+// -- 同步读取文件
+const fileResult=fs.readFileSync(filePath,'utf8');
+const fileResultStr = 
+`${fileResult}
+
+# 主应用保留的文件
+public
+src
+`;
+const targetGitIgnorePath = path.join(targetPath, '_gitignore');
+
 try {
+  fs.writeFileSync(targetGitIgnorePath, fileResultStr, {spaces: '\t'});
   fs.writeJsonSync(packagePath, packageMap, {spaces: '\t'});
 } catch (err) {
   console.log(err);

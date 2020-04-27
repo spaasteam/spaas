@@ -1,13 +1,6 @@
 import "./assets/global.less";
 import "./assets/reset.less";
 
-import store from '@/store/index';
-import * as ContextStore from './store/index';
-
-store.registerModule('myModule', ContextStore);
-
-store.dispatch('myModule/testStores');
-
 const routes = [
   {
     path: '/',

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <wrapper v-show="showWrapper">
+    <wrapper v-if="showWrapper">
       <div v-if="loading">loading</div>
       <div class="app-container" v-if="content">
         <div v-html="content"></div>
       </div>
     </wrapper>
-    <router-view v-show="!showWrapper" />
+    <router-view v-else-if="!showWrapper" />
   </div>
 </template>
 
@@ -47,6 +47,8 @@ export default {
   methods: {
     checkIfShowWrapper(route) {
       const path = route && route.path || this.$route.path;
+      console.error(path);
+
       let showWrapper = true;
       for(const item of RouterList) {
         if(path === item.path || path.startsWith(`${item.path}/`)) {

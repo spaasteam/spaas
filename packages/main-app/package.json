@@ -9,10 +9,16 @@
     "fix": "eslint 'src/**/*.@(js|vue)' --fix && stylelint src/**/*.{vue,less} --fix",
     "lint": "lint-staged",
     "build:template": "node ./bin/build-template.js",
-		"prepack": "npm run build:template"
+    "prepack": "npm run build:template"
   },
+  "files": [
+    "template",
+    "bin"
+  ],
+  "main": "entry/index.js",
   "dependencies": {
     "axios": "^0.19.2",
+    "core-js": "^3.6.5",
     "element-ui": "^2.13.0",
     "js-cookie": "^2.2.1",
     "qiankun": "^1.4.5",

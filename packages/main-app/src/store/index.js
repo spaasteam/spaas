@@ -112,7 +112,7 @@ const actions = {
     }
   },
   async GET_USER_INFO({ state, commit }) {
-    const artifactId = getQueryString('artifactId');
+    const artifactId = getQueryString('artifactId') || '1250843492740722690';
     let res = await getUserInfo(state.token);
     if(res && res.payload) {
       let userInfo = {
@@ -138,8 +138,8 @@ const actions = {
     // 2.1 判断当前的环境，重定向到对应的deepexi环境
     // 2.2 根据传过来的应用code来请求对应的菜单
     // 2.3 根据数据组装菜单
-    const envType = getQueryString('envType');
-    const artifactId = getQueryString('artifactId');
+    const envType = getQueryString('envType') || 'dev';
+    const artifactId = getQueryString('artifactId') || '1250843492740722690';
     if(!envType  || !artifactId) {
       Notification.error({
         title: "提示",

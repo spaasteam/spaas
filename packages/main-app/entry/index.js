@@ -18,7 +18,7 @@ const templateFiles = [
   'yarn.lock',
 ];
 
-const templateDirs = ['public', 'src'];
+const templateDirs = ['public', 'src', 'views'];
 
 const templateFilePaths = templateFiles.map(item => {
   let targetFileName = item.replace(/^\./g, '_');
@@ -37,4 +37,6 @@ module.exports = {
   templateDirPaths,
   templateDirs,
   templateFiles,
+  publicDirPath: path.join(__dirname, '..', 'public'),
+  srcDirPath: path.join(__dirname, '..', 'src'),
 };
