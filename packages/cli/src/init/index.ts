@@ -2,6 +2,7 @@ import * as inquirer from 'inquirer';
 
 import Module from './module';
 import Project from './project';
+import MicroMain from './microMain';
 
 interface SelectTypeInter {
   projectName: string
@@ -38,6 +39,13 @@ export default class SelectType {
         version
       });
       module.create();
+    } else if(type === '微前端主应用模块') {
+      const microMain = new MicroMain({
+        projectName,
+        description,
+        version
+      });
+      microMain.create();
     } else {
       const project = new Project({
         projectName,
@@ -61,7 +69,11 @@ export default class SelectType {
       name: 'type',
       message: '请选择要初始化的模板',
       default: '默认项目模板',
-      choices: [ '默认项目模板', '子应用模板' ]
+      choices: [ 
+        '默认项目模板', 
+        '子应用模板',
+        '微前端主应用模块'
+      ]
     })
   }
 }
