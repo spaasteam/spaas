@@ -34,10 +34,7 @@
   },
   "dependencies": {
     "@spaas/spaas-app": "1.8.0",
-<<<<<<< HEAD
-=======
     "@spaas/main-app": "1.8.0",
->>>>>>> dev
     "@types/fs-extra": "^8.0.1",
     "adm-zip": "^0.4.13",
     "chalk": "^2.4.2",
