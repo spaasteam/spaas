@@ -1,6 +1,6 @@
 {
   "name": "@spaas/main-app",
-  "version": "1.8.0",
+  "version": "2.0.0-alpha.0",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
