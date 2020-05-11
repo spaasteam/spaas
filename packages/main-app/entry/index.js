@@ -37,6 +37,6 @@ module.exports = {
   templateDirPaths,
   templateDirs,
   templateFiles,
-  publicDirPath: path.join(__dirname, '..', 'public'),
-  srcDirPath: path.join(__dirname, '..', 'src'),
+  publicDirPath: path.join(__dirname, '..', 'template', 'public'),
+  srcDirPath: path.join(__dirname, '..', 'template', 'src'),
 };

@@ -1,4 +1,29 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.7.2...v) (2020-03-12)
+# [](https://github.com/spaasteam/spaas/compare/v2.0.0-alpha.0...v) (2020-04-27)
+
+
+
+# [2.0.0-alpha.0](https://github.com/spaasteam/spaas/compare/v1.8.0...v2.0.0-alpha.0) (2020-04-27)
+
+
+### Bug Fixes
+
+* 🐛 处理代码冲突的问题 ([05061e2](https://github.com/spaasteam/spaas/commit/05061e2161e1395e3b37eca11f89943089e79601))
+
+
+### Features
+
+* 🎸 添加git-cz ([7fddcc9](https://github.com/spaasteam/spaas/commit/7fddcc9f10c89e6fdad0921eae8a5eb7b68bf739))
+* 添加微前端主应用 ([0f90bdc](https://github.com/spaasteam/spaas/commit/0f90bdcc91c38d867eb6b7fd092c06a43c050c93))
+* 添加微前端主应用模板 ([8c1cf93](https://github.com/spaasteam/spaas/commit/8c1cf93a070e72b132b65f6b36be5029ea3ff28a))
+
+
+
+# [1.8.0](https://github.com/spaasteam/spaas/compare/v1.7.2...v1.8.0) (2020-03-25)
+
+
+### Features
+
+* 修改头部内容 ([#33](https://github.com/spaasteam/spaas/issues/33)) ([a10a82d](https://github.com/spaasteam/spaas/commit/a10a82dce8ab39106ebe65b96508f5a5ed99b693))
 
 
 
