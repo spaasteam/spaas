@@ -1,0 +1,10 @@
+# yarn
+yarn-error.log
+
+# node
+node_modules
+
+# dist
+lib
+
+.DS_Store
