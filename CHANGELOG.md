@@ -1,5 +1,18 @@
-# [](https://github.com/spaasteam/spaas/compare/v1.8.0...v) (2020-03-25)
-# [](https://github.com/spaasteam/spaas/compare/v2.0.0-alpha.0...v) (2020-04-27)
+# [](https://github.com/spaasteam/spaas/compare/v2.0.1-alpha.0...v) (2020-05-14)
+
+
+
+## [2.0.1-alpha.0](https://github.com/spaasteam/spaas/compare/v2.0.0-alpha.0...v2.0.1-alpha.0) (2020-05-14)
+
+
+### Bug Fixes
+
+* 🐛 处理发版出现的npm包私有化的问题 ([b2c7851](https://github.com/spaasteam/spaas/commit/b2c78516870fcb5e2b5a3a5df264ebb6d99b363f))
+
+
+### Features
+
+* 🎸 子应用主应用通信包封装 ([2069920](https://github.com/spaasteam/spaas/commit/2069920bddd35f9554a618e5258574778f75e302))
 
 
 
@@ -42,8 +55,8 @@
 
 ### Features
 
-* 更换项目的favicon.ico ([733bc02](https://github.com/spaasteam/spaas/commit/733bc02409fb776e2a3f8045ca424936db5012b9))
 * 根据环境来设置logo的字体 ([f458072](https://github.com/spaasteam/spaas/commit/f45807275b12fb6c8f37a95f1da027332a725d0f))
+* 更换项目的favicon.ico ([733bc02](https://github.com/spaasteam/spaas/commit/733bc02409fb776e2a3f8045ca424936db5012b9))
 
 
 
@@ -52,14 +65,14 @@
 
 ### Bug Fixes
 
-* 修改写入config路径 ([52b7121](https://github.com/spaasteam/spaas/commit/52b71213ee86377b8148eaf8baa99224258fac4f))
 * 删除无用包 ([495cd76](https://github.com/spaasteam/spaas/commit/495cd7680c5c4530594bab3c10f2cebfff1b65f5))
+* 修改写入config路径 ([52b7121](https://github.com/spaasteam/spaas/commit/52b71213ee86377b8148eaf8baa99224258fac4f))
 
 
 ### Features
 
-* 新增私有化部署 ([3ad41a9](https://github.com/spaasteam/spaas/commit/3ad41a9c3caab706ed5c58567439ad22b58edf44))
 * 私有化改造 ([a833812](https://github.com/spaasteam/spaas/commit/a833812d7f842045b37438f18c2a4053a14eb631))
+* 新增私有化部署 ([3ad41a9](https://github.com/spaasteam/spaas/commit/3ad41a9c3caab706ed5c58567439ad22b58edf44))
 
 
 
@@ -86,10 +99,10 @@
 
 ### Bug Fixes
 
+* 还原appOptions文件 ([d201d68](https://github.com/spaasteam/spaas/commit/d201d68f2bcf75779a20aa609a5398420f4f617d))
 * 修复拷贝svg文件后无法读取bug ([ef44f30](https://github.com/spaasteam/spaas/commit/ef44f309c78531f6eba17054a758bb0267c9d7da))
 * 修复模块化后改造子应用不显示VueTools ([7a205ce](https://github.com/spaasteam/spaas/commit/7a205ce8150ac575af6a01bf22132b34103975ad))
 * 修复选择应用无法禁用和隐藏 ([f10bdfc](https://github.com/spaasteam/spaas/commit/f10bdfc2e7e159d844dd56a3ac34a80ee2826d52))
-* 还原appOptions文件 ([d201d68](https://github.com/spaasteam/spaas/commit/d201d68f2bcf75779a20aa609a5398420f4f617d))
 
 
 
@@ -317,13 +330,13 @@
 
 ### Features
 
-* childApp引入spaas/cli ([804aebb](https://github.com/spaasteam/spaas/commit/804aebba48abb6b39cfd9a7558fcafbf1b10c542))
-* v2功能改版 ([f985bd8](https://github.com/spaasteam/spaas/commit/f985bd8f09325a584c069e2bd2d9d26141924ae6))
-* 将功能模块化 ([fbf18a6](https://github.com/spaasteam/spaas/commit/fbf18a67631dffa522f23d1caa77606f4e54d96f))
-* 显示模块拷贝只在全局变量中加入COPY_MODULE才显示 ([6ae7987](https://github.com/spaasteam/spaas/commit/6ae79873253cc14b95b4d71128a02949f99a9e1e))
 * 更新主应用子应用模块 ([1cd6600](https://github.com/spaasteam/spaas/commit/1cd6600b1e1ef22a36e37bc537f7684202d8c04b))
+* 将功能模块化 ([fbf18a6](https://github.com/spaasteam/spaas/commit/fbf18a67631dffa522f23d1caa77606f4e54d96f))
 * 添加分支设置 ([58d94b5](https://github.com/spaasteam/spaas/commit/58d94b5060be7ac13c9319fcfef2b728959d8409))
 * 添加功能模块化安装功能 ([c76b775](https://github.com/spaasteam/spaas/commit/c76b775dcfee9af1906e82db88e11766f5df260e))
+* 显示模块拷贝只在全局变量中加入COPY_MODULE才显示 ([6ae7987](https://github.com/spaasteam/spaas/commit/6ae79873253cc14b95b4d71128a02949f99a9e1e))
+* childApp引入spaas/cli ([804aebb](https://github.com/spaasteam/spaas/commit/804aebba48abb6b39cfd9a7558fcafbf1b10c542))
+* v2功能改版 ([f985bd8](https://github.com/spaasteam/spaas/commit/f985bd8f09325a584c069e2bd2d9d26141924ae6))
 
 
 
@@ -347,9 +360,9 @@
 
 ### Features
 
-* 将active背景色更改为主题色 ([cb4012e](https://github.com/spaasteam/spaas/commit/cb4012e085f9d0ba06a203fffe21bd6d77735e2e))
-* 更新头部样式以及侧边栏样式 ([9f2a49c](https://github.com/spaasteam/spaas/commit/9f2a49c06c3ec9cdc585e15216d016eed2619f18))
 * 更新首页样式 ([5a18d17](https://github.com/spaasteam/spaas/commit/5a18d17365563a9be62397acd3ea5f9eadd430e5))
+* 更新头部样式以及侧边栏样式 ([9f2a49c](https://github.com/spaasteam/spaas/commit/9f2a49c06c3ec9cdc585e15216d016eed2619f18))
+* 将active背景色更改为主题色 ([cb4012e](https://github.com/spaasteam/spaas/commit/cb4012e085f9d0ba06a203fffe21bd6d77735e2e))
 * 添加侧边菜单显示对应的图标 ([eb1b193](https://github.com/spaasteam/spaas/commit/eb1b19363e7b250b6d2b7640c3ae5171788ab062))
 
 
@@ -378,10 +391,10 @@
 
 ### Features
 
-* 修改spaas init命令 ([3774875](https://github.com/spaasteam/spaas/commit/3774875398ab24f29b31680711d47eb31853e1e2))
-* 整理mainApp中的依赖 ([6be35c7](https://github.com/spaasteam/spaas/commit/6be35c75e0991404d4333aa26f80daf314018dec))
 * 更新子应用依赖 ([a0b6332](https://github.com/spaasteam/spaas/commit/a0b63329d90a8b57127c05634e0d0fd745bd8180))
 * 添加子应用模板 ([a8bd3fb](https://github.com/spaasteam/spaas/commit/a8bd3fbf21bcb10cbb76bd2046c53078f793ca14))
+* 修改spaas init命令 ([3774875](https://github.com/spaasteam/spaas/commit/3774875398ab24f29b31680711d47eb31853e1e2))
+* 整理mainApp中的依赖 ([6be35c7](https://github.com/spaasteam/spaas/commit/6be35c75e0991404d4333aa26f80daf314018dec))
 
 
 
@@ -429,10 +442,10 @@
 
 ### Features
 
-* 添加github-release-notes依赖 ([52d1f9a](https://github.com/spaasteam/spaas/commit/52d1f9a1865019fefc11a0b55b938741032aa66e))
+* 调整自动化发版脚本 ([fd8d524](https://github.com/spaasteam/spaas/commit/fd8d524958f3e97fa5149a0e9eb25b41e685fbf8))
 * 添加构建发布提醒 ([6d94fc2](https://github.com/spaasteam/spaas/commit/6d94fc214c354116a36ae1408ac33ffe5e57875f))
 * 添加构建发布自动化脚本 ([3487cef](https://github.com/spaasteam/spaas/commit/3487cefad38db75d11acc52bdf28800edf425155))
-* 调整自动化发版脚本 ([fd8d524](https://github.com/spaasteam/spaas/commit/fd8d524958f3e97fa5149a0e9eb25b41e685fbf8))
+* 添加github-release-notes依赖 ([52d1f9a](https://github.com/spaasteam/spaas/commit/52d1f9a1865019fefc11a0b55b938741032aa66e))
 
 
 
@@ -441,8 +454,8 @@
 
 ### Features
 
-* 主应用NPM包开发 ([a0b88f8](https://github.com/spaasteam/spaas/commit/a0b88f8626ac3fb454da2affec179d75b6c2ef97))
 * 添加spaas start 启动项目功能 ([f148077](https://github.com/spaasteam/spaas/commit/f148077513769c1894d0adfa067190d698e3cfb3))
+* 主应用NPM包开发 ([a0b88f8](https://github.com/spaasteam/spaas/commit/a0b88f8626ac3fb454da2affec179d75b6c2ef97))
 
 
 
@@ -463,8 +476,8 @@
 
 ### Features
 
-* spaas-cli v1.0.0版本功能完成 ([444d6a8](https://github.com/spaasteam/spaas/commit/444d6a8cae6b0d541adf3b388ed347a15a147830))
 * 命令行工具初始化项目脚手架 ([ff5e0b2](https://github.com/spaasteam/spaas/commit/ff5e0b2aff00ad34c4136be50e5c267b1a31827a))
+* spaas-cli v1.0.0版本功能完成 ([444d6a8](https://github.com/spaasteam/spaas/commit/444d6a8cae6b0d541adf3b388ed347a15a147830))
 
 
 
