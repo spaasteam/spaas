@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v2.0.1-alpha.0...v) (2020-05-14)
+# [](https://github.com/spaasteam/spaas/compare/v2.0.2-alpha.0...v) (2020-05-19)
+
+
+
+## [2.0.2-alpha.0](https://github.com/spaasteam/spaas/compare/v2.0.1-alpha.0...v2.0.2-alpha.0) (2020-05-19)
+
+
+### Features
+
+* 🎸 主应用接入npm通信包 ([0cffc41](https://github.com/spaasteam/spaas/commit/0cffc41f2cacab16492d64b38d12e10de3d1a9f5))
 
 
 
