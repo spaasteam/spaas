@@ -18,7 +18,7 @@ const templateFiles = [
   'yarn.lock',
 ];
 
-const templateDirs = ['public', 'src', 'views'];
+const templateDirs = ['public', 'src', 'views', 'types'];
 
 const templateFilePaths = templateFiles.map(item => {
   let targetFileName = item.replace(/^\./g, '_');

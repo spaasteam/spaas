@@ -1,111 +1,116 @@
 <template>
-  <div class="login-layout">
-    <div class="login-layout__content">
-      <div class="login-layout__card">
-        <div class="login-layout__card--banner">
-          <img src="../assets/img/login-banner.png" />
-        </div>
-        <div class="login-layout__card--form">
-          <h2 class="login-layout__card--title">你好，请先登录</h2>
-          <router-view></router-view>
-          <div class="login-layout__card--form__footer">
-            - DEEPEXI DR -
-          </div>
-        </div>
-      </div>
+  <div class="layout-login">
+    <div class="login-form">
+      <h1 class="title">
+        <img
+          class="logo-login"
+          src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/xpaas-console/logo_SPaaS_black.png"
+          alt=""
+        />
+        <!--<span>{{$store.state.meta.appName}}</span>-->
+      </h1>
+      <router-view></router-view>
     </div>
-    <div class="layout-login__footer">
+    <div class="buttom-wrapper font-s text-center ">
       <copyright></copyright>
     </div>
   </div>
 </template>
 
-<script>
-import Copyright from "../components/copyright.vue";
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
+import Copyright from '../components/copyright.vue'
 
-export default {
-  name: "Login",
+@Component({
   components: {
-    Copyright,
-  },
-  data() {
-    return {};
-  },
-  methods: {},
-};
+    Copyright
+  }
+})
+export default class Login extends Vue {}
 </script>
-<style lang="less" scoped>
-.login-layout {
-  width: 100vw;
-  height: 100vh;
+<style lang="less">
+@basic-font-family: PingFangSC-Regular;
+
+.layout-login {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #f1f7fc;
-  overflow: hidden;
+  padding: 8% 0 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #f0f2f5;
+  background-image: url(https://deepexi.oss-cn-shenzhen.aliyuncs.com/xpaas-console/bg_login.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 
-  &__content {
-    height: calc(100vh - 60px);
+  .logo-login {
+    width: 260px;
+    vertical-align: middle;
+  }
+
+  .title {
     position: relative;
+    height: 34px;
+    line-height: 34px;
+    margin: 0 auto 45px;
+    text-align: center;
+    font-size: 38px;
+    font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 500;
   }
 
-  &__card {
-    width: 760px;
-    height: 470px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
-    z-index: 999;
-
-    &--banner {
-      width: 380px;
-      height: 470px;
-      background:
-        linear-gradient(
-          360deg,
-          rgba(40, 120, 255, 1) 0%,
-          rgba(27, 108, 245, 1) 100%
-        );
-      float: left;
-      box-sizing: border-box;
-
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &--form {
-      width: 380px;
-      height: 470px;
-      float: right;
-      box-sizing: border-box;
-      padding: 45px;
-
-      &__footer {
-        font-size: 12px;
-        color: #818389;
-        text-align: center;
-      }
-    }
-
-    &--title {
-      font-size: 22px;
-      color: #2878ff;
-      line-height: 56px;
-    }
+  .login-form {
+    width: 450px;
+    margin: 0 auto 100px;
+    padding: 50px 0 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   }
 
-  &__footer {
+  .buttom-wrapper {
     width: 100%;
-    background: #f1f7fc;
+    position: absolute;
+    bottom: 41px;
+
+    .buttom-link {
+      height: 17px;
+      line-height: 17px;
+      font-family: @basic-font-family;
+      margin-bottom: 11px;
+
+      a {
+        color: rgba(255, 255, 255, 1);
+      }
+
+      .service-item {
+        margin: 0 24px;
+        cursor: pointer;
+      }
+    }
+
+    .copyright {
+      height: 17px;
+      line-height: 17px;
+      font-size: 12px;
+      font-family: @basic-font-family;
+      color: #606266;
+    }
+  }
+
+  .main {
+    width: 300px;
+    margin: auto;
+  }
+
+  .el-form {
+    width: 100%;
+    margin: auto;
+  }
+
+  .el-button {
+    width: 300px;
+    margin: auto;
+    display: block;
+    height: 40px;
+    border-radius: 35px;
   }
 }
 </style>

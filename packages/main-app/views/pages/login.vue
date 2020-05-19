@@ -1,43 +1,37 @@
 <template>
   <div class="login">
+    <!--样式在layout/login-->
     <div class="main">
-      <el-form
-        ref="loginForm"
-        :model="form"
-        :rules="rules"
-        class="login-form"
-        @keyup.enter.native="login"
-      >
-        <el-form-item label prop="enterpriseId">
-          <dr-input
+      <el-form :model="form" status-icon :rules="rules" ref="loginForm" class="login-content">
+        <el-form-item label="" prop="enterpriseId">
+          <el-input
+            placeholder="租户ID"
+            type="enterpriseId"
             v-model.trim="form.enterpriseId"
-            size="small"
-            label="企业ID"
-          ></dr-input>
-        </el-form-item>
-        <el-form-item label prop="username">
-          <dr-input
-            v-model.trim="form.username"
-            label="账号"
-            size="small"
-          ></dr-input>
-        </el-form-item>
-        <el-form-item label prop="password">
-          <dr-input
-            v-model.trim="form.password"
-            label="密码"
-            type="password"
-            size="small"
             auto-complete="off"
-          ></dr-input>
+            @keyup.enter.native="login"
+          ></el-input>
         </el-form-item>
-        <el-form-item class="login-button__container">
+        <el-form-item label="" prop="username">
+          <el-input placeholder="用户名/邮箱" v-model.trim="form.username"></el-input>
+        </el-form-item>
+        <el-form-item label="" prop="password">
+          <el-input
+            placeholder="密码"
+            type="password"
+            v-model.trim="form.password"
+            auto-complete="off"
+            @keyup.enter.native="login"
+          ></el-input>
+        </el-form-item>
+        <!--<p style="margin-bottom: 24px">用户名：{{test.username}}; 密码：{{test.password}}</p>-->
+        <el-form-item>
           <el-button
-            :loading="loading"
-            class="login-button"
             type="primary"
-            size="medium"
             @click="login"
+            :loading="loading"
+            size="medium"
+            class="login-button primary-button"
             >登录</el-button
           >
         </el-form-item>
@@ -50,78 +44,110 @@
 </template>
 
 <script>
-import DrInput from "~/components/dr-input";
-
 export default {
-  layout: "login",
-  name: "Login",
-  components: {
-    DrInput,
+  layout: 'login',
+  name: 'login',
+  components: {},
+  head() {
+    return {
+      title: 'sPaaS Console 登录',
+    };
   },
   data() {
+    const validateUserName = (rules, value, callback) => {
+      if (!value) {
+        callback('请输入账号');
+      } else {
+        callback();
+      }
+    };
+    const validatePsw = (rules, value, callback) => {
+      if (!value) {
+        callback('请输入密码');
+      } else {
+        callback();
+      }
+    };
+
     return {
+      test: {
+        username: 'guest',
+        password: 'guest1234',
+      },
       loading: false,
       form: {
-        username: "",
-        password: "",
-        enterpriseId: "",
+        username: '',
+        password: '',
+        enterpriseId: '',
       },
       rules: {
-        enterpriseId: [
-          { required: true, message: "请输入企业Id", trigger: "blur" },
+        username: [
+          {
+            validator: validateUserName,
+            trigger: 'blur',
+          },
         ],
-        username: [{ required: true, message: "请输入账号", trigger: "blur" }],
-        password: [{ required: true, message: "请输入密码", trigger: "blur" }],
+        password: [
+          {
+            validator: validatePsw,
+            required: true,
+            trigger: 'blur',
+          },
+        ],
+        enterpriseId: [
+          {
+            required: true,
+            trigger: 'blur',
+            message: '请输入租户ID',
+          },
+        ],
       },
     };
   },
   methods: {
     login() {
-      // 判断是否在请求中
-      if (this.loading) return;
-      this.$refs.loginForm.validate((valid) => {
+      this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true;
 
+          const params = {
+            username: this.form.username,
+            password: this.form.password,
+            channel: 'pc',
+            enterpriseId: this.form.enterpriseId,
+          };
           this.$store
-            .dispatch("LOGIN", this.form)
+            .dispatch('LOGIN', params)
             .then(() => {
               this.loading = false;
-              this.$router.replace("/");
+              this.$router.replace('/');
             })
-            .catch((e) => {
+            .catch(e => {
               // TODO 异常处理
               this.loading = false;
-              console.error(e);
+              console.log(e);
             });
         } else {
           return false;
         }
       });
     },
+
+    toSignUp() {
+      this.$router.push('/register');
+    },
   },
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .login {
-  &-form {
-    .el-form-item__error {
-      width: 100%;
-      font-size: 12px;
-      color: #9ca6c7;
-      text-align: right;
-      font-weight: 400;
-      line-height: 18px;
-    }
+  .login-button {
+    font-weight: 400;
   }
+}
 
-  &-button__container {
-    margin-top: 40px;
-
-    .login-button {
-      width: 100%;
-    }
-  }
+.main {
+  margin-bottom: 30px;
 }
 </style>

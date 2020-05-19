@@ -1,7 +1,9 @@
 <template>
   <div>
     <wrapper v-if="showWrapper">
-      <div v-if="loading">loading</div>
+      <div v-if="loading">
+        <loading />
+      </div>
       <div class="app-container" v-if="content">
         <div v-html="content"></div>
       </div>
@@ -47,7 +49,6 @@ export default {
   methods: {
     checkIfShowWrapper(route) {
       const path = route && route.path || this.$route.path;
-      console.error(path);
 
       let showWrapper = true;
       for(const item of RouterList) {

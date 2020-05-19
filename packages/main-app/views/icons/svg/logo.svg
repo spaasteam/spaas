@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="24px" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>S</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="3.061617e-15%" id="linearGradient-1">
+            <stop stop-color="#61E4FF" offset="0%"></stop>
+            <stop stop-color="#32C5FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#61E4FF" offset="0%"></stop>
+            <stop stop-color="#32C5FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="60.883805%" y1="87.8257085%" x2="60.883805%" y2="13.5861983%" id="linearGradient-3">
+            <stop stop-color="#0091FF" offset="0%"></stop>
+            <stop stop-color="#48AFFE" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="63.6761477%" y1="87.4291844%" x2="63.6761477%" y2="15.1472224%" id="linearGradient-4">
+            <stop stop-color="#0067FF" offset="0%"></stop>
+            <stop stop-color="#4992FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="44.3191229%" y1="87.0921565%" x2="44.3191229%" y2="17.2378489%" id="linearGradient-5">
+            <stop stop-color="#0091FF" offset="0%"></stop>
+            <stop stop-color="#399EFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="60.883805%" y1="87.8257085%" x2="60.883805%" y2="13.5861983%" id="linearGradient-6">
+            <stop stop-color="#0091FF" offset="0%"></stop>
+            <stop stop-color="#48AFFE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="组件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="header" transform="translate(-24.000000, -18.000000)">
+            <g id="logo">
+                <g>
+                    <g id="S" transform="translate(34.000000, 30.000000) scale(-1, 1) translate(-34.000000, -30.000000) translate(24.000000, 18.000000)">
+                        <polygon id="XMLID_15_" fill="url(#linearGradient-1)" fill-rule="nonzero" points="-3.36571049e-14 3.99907214 10 -3.37507799e-14 10 8"></polygon>
+                        <polyline id="XMLID_40_" fill="url(#linearGradient-2)" fill-rule="nonzero" points="20 3.99907214 10 -3.37507799e-14 10 8 20 3.99907214"></polyline>
+                        <polyline id="XMLID_41_" fill="url(#linearGradient-3)" points="20 12 20 4 10 8.00092786"></polyline>
+                        <polygon id="XMLID_27_" fill="url(#linearGradient-4)" points="5.89008009e-14 12 10 16 10 8"></polygon>
+                        <polygon id="XMLID_43_" fill="url(#linearGradient-5)" points="10 8 10 16 20 12"></polygon>
+                        <polygon id="XMLID_46_" fill="url(#linearGradient-3)" points="5.89008009e-14 12 5.89008009e-14 20 10 16"></polygon>
+                        <path d="M9.99866042,24 L0.00133958473,20 L9.99866042,16 L10,16 L20,20 L10,24 L9.99866042,24 Z" id="形状结合" fill="url(#linearGradient-6)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
