@@ -16,6 +16,7 @@ const templateFiles = [
   'vue.config.js',
   'package.json',
   'yarn.lock',
+  'README.md',
 ];
 
 const templateDirs = ['public', 'src', 'views', 'types'];
