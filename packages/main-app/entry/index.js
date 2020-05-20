@@ -12,6 +12,7 @@ const templateFiles = [
   '.stylelintrc',
   'build.sh',
   'jsconfig.json',
+  'tsconfig.json',
   'proxy.config.js',
   'vue.config.js',
   'package.json',
