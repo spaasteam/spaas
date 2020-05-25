@@ -228,6 +228,7 @@ export default class extends Vue {
         overflow: hidden;
         color: #fff;
         margin-right: 10px;
+        line-height: 1.5;
       }
 
       .head-search {
