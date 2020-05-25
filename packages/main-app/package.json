@@ -1,6 +1,6 @@
 {
   "name": "@spaas/main-app",
-  "version": "2.0.2-alpha.0",
+  "version": "2.0.3-alpha.0",
   "scripts": {
     "build": "vue-cli-service build",
     "lint": "lint-staged",
@@ -16,7 +16,7 @@
     "bin"
   ],
   "dependencies": {
-    "@spaas/bridge": "2.0.2-alpha.0",
+    "@spaas/bridge": "2.0.3-alpha.0",
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "element-ui": "^2.13.0",
