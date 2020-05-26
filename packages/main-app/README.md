@@ -38,7 +38,7 @@ yarn
 ```
 ### 四、在项目根目录下创建.env文件
 ```bash
-API_SERVER=http://dr.sandbox.deepexi.top
+VUE_APP_API_SERVER=http://dr.sandbox.deepexi.top
 
 # PUBLIC_PATH=http://cdn-dev.deepexi.top/deepexi-ci-cd/deploy/5da1824b70e174004079a44a/xraclv96jd2nd7z8cyanl0h4i8jtu51n/
 ```

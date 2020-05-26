@@ -3,6 +3,12 @@ import * as fs from 'fs-extra'
 import * as inquirer from 'inquirer'
 import * as path from 'path';
 import * as MainApp from '@spaas/main-app';
+import * as child_process from 'child_process'
+import * as ora from 'ora'
+
+import { PRIVATE_NPM } from '../util/constants';
+
+const execSync = child_process.execSync
 
 export interface IProjectConf {
   projectName: string
@@ -31,6 +37,9 @@ export default class Module {
       .then(async (answers) => {
         this.conf = Object.assign(this.conf, answers)
         await this.downTemplate()
+        await this.downDependent()
+        const { projectName } = this.conf;
+        console.log(chalk.green(`请进入项目目录 ${chalk.green.bold(projectName)} 开始工作吧！😝`));
       })
       .catch(err => console.log(chalk.red('创建项目失败: ', err)))
       .finally(() => {
@@ -69,8 +78,7 @@ export default class Module {
         // 3、处理package.json的依赖
         // 4、处理script脚本, 将所有nuxt 替换为spaas nuxt
         fs.writeJsonSync(packagePath, packageMap, {spaces: '\t'});
-        console.log(`${chalk.green('✔ ')}${chalk.grey(`创建项目: ${chalk.grey.bold(projectName)}`)}`);
-        console.log(chalk.green(`请进入项目目录 ${chalk.green.bold(projectName)} 开始工作吧！😝`));
+        console.log(`${chalk.green('✔ ')}${`创建项目: ${chalk.green.bold(projectName)}`}`);
         resolve();
       } catch(err) {
         fs.rmdirSync(projectName);
@@ -78,6 +86,24 @@ export default class Module {
         reject(err);
       }
     });
+  }
+
+  downDependent() {
+    return new Promise((resolve, reject) => {
+      const { projectName } = this.conf;
+      const spinner = ora(`正在安装项目依赖`).start()
+      console.log()
+      try {
+        execSync(`cd ./${projectName} && git init && yarn --registry=${PRIVATE_NPM} && cd ../`)
+        spinner.color = 'green'
+        spinner.succeed(`${chalk.green('安装项目依赖成功！')}`)
+        resolve()
+      } catch(err) {
+        spinner.color = 'red'
+        spinner.fail(chalk.red('安装项目依赖失败, 请稍后手动安装依赖！'))
+        reject(err)
+      }
+    })
   }
 
   ask() {

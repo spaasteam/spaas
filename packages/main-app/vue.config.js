@@ -53,11 +53,16 @@ module.exports = {
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
     types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
   },
-  configureWebpack: {
-    externals: {
-      'vue': 'Vue',
-      'vue-router': 'VueRouter',
-      'element-ui': 'ELEMENT',
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      // 为生产环境修改配置...
+      config.externals = {
+        vue: 'Vue',
+        'vue-router': 'VueRouter',
+        'element-ui': 'ELEMENT'
+      }
+    } else {
+      // 为开发环境修改配置...
     }
-  },
+  }
 }

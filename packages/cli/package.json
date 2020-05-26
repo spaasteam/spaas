@@ -33,6 +33,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@spaas/child-app": "2.0.3-alpha.0",
     "@spaas/main-app": "2.0.3-alpha.0",
     "@spaas/spaas-app": "2.0.3-alpha.0",
     "@types/fs-extra": "^8.0.1",
