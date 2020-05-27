@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v2.0.3-alpha.0...v) (2020-05-25)
+# [](https://github.com/spaasteam/spaas/compare/v2.0.4-alpha.0...v) (2020-05-26)
+
+
+
+## [2.0.4-alpha.0](https://github.com/spaasteam/spaas/compare/v2.0.3-alpha.0...v2.0.4-alpha.0) (2020-05-26)
+
+
+### Features
+
+* 🎸 微前端子应用模板发版 ([4a26c9d](https://github.com/spaasteam/spaas/commit/4a26c9d6e67f35554ff26da91fce3c906e77defc))
 
 
 
