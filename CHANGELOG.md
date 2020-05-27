@@ -1,4 +1,8 @@
-# [](https://github.com/spaasteam/spaas/compare/v2.0.5-alpha.0...v) (2020-05-27)
+# [](https://github.com/spaasteam/spaas/compare/v2.0.6-alpha.0...v) (2020-05-27)
+
+
+
+## [2.0.6-alpha.0](https://github.com/spaasteam/spaas/compare/v2.0.5-alpha.0...v2.0.6-alpha.0) (2020-05-27)
 
 
 
