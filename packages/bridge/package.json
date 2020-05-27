@@ -1,6 +1,6 @@
 {
   "name": "@spaas/bridge",
-  "version": "2.0.4-alpha.0",
+  "version": "2.0.5-alpha.0",
   "description": "icestark-data is a JavaScript library for icestark, used for communication.",
   "scripts": {
     "start": "concurrently \"yarn start:main\" \"yarn start:vue\" \"yarn start:nuxt\"",
