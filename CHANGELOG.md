@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v2.0.4-alpha.0...v) (2020-05-26)
+# [](https://github.com/spaasteam/spaas/compare/v2.0.5-alpha.0...v) (2020-05-27)
+
+
+
+## [2.0.5-alpha.0](https://github.com/spaasteam/spaas/compare/v2.0.4-alpha.0...v2.0.5-alpha.0) (2020-05-27)
+
+
+### Features
+
+* 🎸 通信包添加格式校验 ([4569f31](https://github.com/spaasteam/spaas/commit/4569f3104f87bdd72aef604ea74091b49bd4f889))
 
 
 
