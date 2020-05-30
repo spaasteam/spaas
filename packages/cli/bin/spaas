@@ -14,4 +14,5 @@ program
   .command('start', 'start dev server')
   .command('nuxt', 'nuxt service')
   .command('yarn', 'yarn private package')
+  .command('build', 'build project and transport to oss')
   .parse(process.argv)

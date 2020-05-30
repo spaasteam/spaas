@@ -102,6 +102,26 @@ export function parseGitUrl(url: string): GitUrlParseOptions {
     repo,
     branch: ref,
     path: `/${filepath}`,
-    id: `${resource}/${fullName}`, // 唯一标识一个 git 仓库
+    id: `${resource}/${fullName}` // 唯一标识一个 git 仓库
   };
+}
+
+/**
+ * 将异步函数变同步
+ * @param fn 
+ * @source https://cnodejs.org/topic/567650c3c096b56a0c1b4352
+ */
+export function promisify(fn) {
+  return function(...args) {
+    return new Promise(function(resolve, reject) {
+      [].push.call(args, function(err, result) {
+        if(err) {
+          reject(err);
+        }else {
+          resolve(result);
+        }
+      });
+      fn.apply(null, args);
+    });
+  }
 }
