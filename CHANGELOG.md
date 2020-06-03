@@ -1,4 +1,18 @@
-# [](https://github.com/spaasteam/spaas/compare/v2.0.6-alpha.0...v) (2020-05-27)
+# [](https://github.com/spaasteam/spaas/compare/v3.0.0...v) (2020-06-03)
+
+
+
+# [3.0.0](https://github.com/spaasteam/spaas/compare/v2.0.6-alpha.0...v3.0.0) (2020-06-03)
+
+
+### Bug Fixes
+
+* 🐛 调整spaas build功能 ([2b41c88](https://github.com/spaasteam/spaas/commit/2b41c888e885070dfc795ca1199c7513fb3b09a0))
+
+
+### Features
+
+* 🎸 添加本地构建发布到OSS的功能 ([82253cf](https://github.com/spaasteam/spaas/commit/82253cf142b1dc2c4a656fdb02feaf8bafb66b82))
 
 
 
