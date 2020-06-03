@@ -15,10 +15,10 @@ export interface IBuildOptions {
 }
 
 export interface IOssConfig {
-  'OSS_KEY': string,
-  'OSS_SECRET': string,
-  'OSS_BUCKET': string,
-  'OSS_REGION': string
+  'BUILD_OSS_KEY': string,
+  'BUILD_OSS_SECRET': string,
+  'BUILD_OSS_BUCKET': string,
+  'BUILD_OSS_REGION': string
 }
 
 export interface ISPaaSBuildConfig extends IOssConfig {

@@ -1,17 +1,22 @@
 /**
  * 本地构建发布到OSS环境
  */
-// TODO
 /**
  * 在项目中执行spaas build dev/qa命令
- * 读取项目中的.spaas.dev/.spaas.qa配置的OSS信息（OSS_KEY、 OSS_SECRET、OSS_BUCKET、OSS_REGION ）
+ * 读取项目中的.spaas.dev/.spaas.qa配置的OSS信息（BUILD_OSS_KEY、 BUILD_OSS_SECRET、BUILD_OSS_BUCKET、BUILD_OSS_REGION ）
  * 拼接项目中固定的文件目录；
  * 生成publicPath, 写入到对应的.dev/.qa文件中;
  * 编译构建生成对应的文件；
+ * 删除原有的OSS文件 // TODO
+ * 将文件拷贝到OSS临时文件夹 // TODO
+ * 将原有文件夹重命名 // TODO
+ * 将临时文件夹重命名为原有文件夹 // TODO
+ * 删除原有的临时文件夹
  * 将文件拷贝到OSS；
  * 根据.spaas.dev/.spaas.qa文件夹中的配置konga
  */
 import chalk from 'chalk'
+
 import { promisify } from '../util/index';
 
 const childProcess = require('child_process');
@@ -31,14 +36,11 @@ const path = require('path')
 const readdir = promisify(fs.readdir);
 const stat = promisify(fs.stat)
 
-const OSS_DOMAIN_URL = 'https://spaas.oss-cn-beijing.aliyuncs.com';
-const OSS_FRONT_END_BASE_DIR = '/frontEnd';
-
 export default class Build implements IBuildFunc {
   public conf: IBuildConfig
 
   // public publicPath: string
-  public uniqueProjectName: string
+  public uniquePublicPath: string
 
   // 构建出来的文件路径数组
   public distFilePath: string[] = []
@@ -64,38 +66,47 @@ export default class Build implements IBuildFunc {
     }
   }
 
-  get publicPath(): string {
-    return `${OSS_DOMAIN_URL}/${this.ossProjectBasePath}`
-  }
-
   get ossProjectBasePath(): string {
-    return `${OSS_FRONT_END_BASE_DIR}/${this.conf.type}/${this.uniqueProjectName}`
+    const reg = /^((https?:)?)\/\/(([a-zA-Z0-9_-])+(\.)?)*(\/*)/
+    const ossFilePath = this.uniquePublicPath.replace(reg, '/');
+    return ossFilePath.replace(/\/$/, '')
   }
 
-  
+  // 项目的缓存文件夹目录
+  get ossProjectTempPath(): string {
+    return `${this.ossProjectBasePath}_temp`
+  }
+
   async run() {
-    // 读取项目中的.spaas.dev/.spaas.qa配置的OSS信息（OSS_KEY、 OSS_SECRET、OSS_BUCKET、OSS_REGION ）
+    // 读取项目中的.spaas.dev/.spaas.qa配置的OSS信息（BUILD_OSS_KEY、 BUILD_OSS_SECRET、BUILD_OSS_BUCKET、BUILD_OSS_REGION ）
     // 在环境变量中写入public_path
     // 编译构建生成对应的文件；
     // 将文件拷贝到OSS；
     // 返回publicPath,并写入到对应的.spaas.dev/.spaas.qa文件中
 
-    // 读取项目中的.spaas.dev/.spaas.qa配置的OSS信息（OSS_KEY、 OSS_SECRET、OSS_BUCKET、OSS_REGION ）
+    // 读取项目中的.spaas.dev/.spaas.qa配置的OSS信息（BUILD_OSS_KEY、 BUILD_OSS_SECRET、BUILD_OSS_BUCKET、BUILD_OSS_REGION ）
     const getConfig = this.readConfigFile()
     if(getConfig.error) return
     const { 
-      UNIQUE_PROJECT_NAME,
-      OSS_KEY,
-      OSS_SECRET,
-      OSS_BUCKET,
-      OSS_REGION
+      PUBLIC_PATH,
+      BUILD_OSS_KEY,
+      BUILD_OSS_SECRET,
+      BUILD_OSS_BUCKET,
+      BUILD_OSS_REGION
      } = getConfig.parsed as ISPaaSBuildConfig
-    this.uniqueProjectName = UNIQUE_PROJECT_NAME
+    // 校验PUBLIC_PATH的数据格式
+    const reg = /^((https?:)?)\/\/(([a-zA-Z0-9_-])+(\.)?)*(\/((\.)?[a-zA-Z0-9_-])*)*$/i;
+    if(!reg.test(PUBLIC_PATH)) {
+      console.log(`${chalk.red('❌ ')}${chalk.grey(`PUBLIC_PATH格式不正确`)}`);
+      process.exit(1);
+    }
+
+    this.uniquePublicPath = PUBLIC_PATH
     this.ossConfig = {
-      OSS_KEY,
-      OSS_SECRET,
-      OSS_BUCKET,
-      OSS_REGION
+      BUILD_OSS_KEY,
+      BUILD_OSS_SECRET,
+      BUILD_OSS_BUCKET,
+      BUILD_OSS_REGION
     };
     // 将publicPath写入到node环境变量中，并写入到对应的.spaas.dev/.spaas.qa文件中
     if(this.writePublicPath()) {
@@ -163,7 +174,7 @@ export default class Build implements IBuildFunc {
     try {
       // specifying an encoding returns a string instead of a buffer
       const parsed = this.parse(fs.readFileSync(spaasConfigPath, { encoding }), { debug })
-      const mustHasKeys = ['OSS_KEY', 'OSS_SECRET', 'OSS_BUCKET', 'OSS_REGION', 'UNIQUE_PROJECT_NAME'];
+      const mustHasKeys = ['BUILD_OSS_KEY', 'BUILD_OSS_SECRET', 'BUILD_OSS_BUCKET', 'BUILD_OSS_REGION', 'PUBLIC_PATH'];
       const notExitKeys: typeof mustHasKeys = [];
       for(const item of mustHasKeys) {
         if(!parsed[item]) {
@@ -225,32 +236,38 @@ export default class Build implements IBuildFunc {
 
     // 遍历文件列表，上传到oss
     const {
-      OSS_KEY,
-      OSS_SECRET,
-      OSS_BUCKET,
-      OSS_REGION
+      BUILD_OSS_KEY,
+      BUILD_OSS_SECRET,
+      BUILD_OSS_BUCKET,
+      BUILD_OSS_REGION
     } = this.ossConfig;
     this.client = new OSS({
-      region: OSS_REGION,
-      accessKeyId: OSS_KEY,
-      accessKeySecret: OSS_SECRET,
-      bucket: OSS_BUCKET
+      region: BUILD_OSS_REGION,
+      accessKeyId: BUILD_OSS_KEY,
+      accessKeySecret: BUILD_OSS_SECRET,
+      bucket: BUILD_OSS_BUCKET
     });
     
+    // TODO
+    // 将原有的缓存文件去除
+    // 上传文件到缓存文件夹
+    // 将原有的正式文件删除
+    // 将缓存文件夹重命名为正式文件夹
+    // 将原有的缓存文件去除
+    this.client.delete('object-name');
+
     const promiseArr: Promise<boolean>[] = []
     for(const item of this.distFilePath) {
       promiseArr.push(this.uploadFileOneByOne(item))
     }
     return Promise.all(promiseArr).then((res) => {
-      console.log(res);
-      return true
+      return Boolean(res.filter(item => item === false).length)
     })
   }
 
   uploadFileOneByOne(filePath: string): Promise<boolean> {
-    const fileName = filePath.replace(`${process.cwd()}/dist`, '/frontEnd/qa')
+    const fileName = filePath.replace(`${process.cwd()}/dist`, this.ossProjectBasePath)
     return this.client.multipartUpload(fileName, filePath).then(res => true).catch(e => {
-      console.log(e);
       return false
     })
   }
@@ -285,7 +302,7 @@ export default class Build implements IBuildFunc {
    */
   writePublicPath(): boolean {
     const envPath = path.resolve(process.cwd(), '.env')
-    const publicPath = this.publicPath;
+    const publicPath = this.uniquePublicPath;
   
     try {
       const fileResult = fs.readFileSync(envPath, 'utf8');
