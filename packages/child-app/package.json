@@ -1,6 +1,6 @@
 {
   "name": "@spaas/child-app",
-  "version": "2.0.6-alpha.0",
+  "version": "3.0.0",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -16,7 +16,7 @@
     "bin"
   ],
   "dependencies": {
-    "@spaas/bridge": "2.0.6-alpha.0",
+    "@spaas/bridge": "3.0.0",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.2",

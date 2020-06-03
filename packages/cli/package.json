@@ -1,6 +1,6 @@
 {
   "name": "@spaas/cli",
-  "version": "2.0.6-alpha.0",
+  "version": "3.0.0",
   "description": "为spaas打造的命令行工具",
   "main": "index.js",
   "scripts": {
@@ -33,9 +33,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@spaas/child-app": "2.0.6-alpha.0",
-    "@spaas/main-app": "2.0.6-alpha.0",
-    "@spaas/spaas-app": "2.0.6-alpha.0",
+    "@spaas/child-app": "3.0.0",
+    "@spaas/main-app": "3.0.0",
+    "@spaas/spaas-app": "3.0.0",
     "@types/fs-extra": "^8.0.1",
     "adm-zip": "^0.4.13",
     "ali-oss": "^6.8.0",
