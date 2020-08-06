@@ -17,7 +17,7 @@
  */
 
 import Vue from 'vue';
-import cookie from 'js-cookie';
+import {cookie} from 'dx-admin-components';
 import qs from 'qs';
 
 import cookieKeys from '@/const/cookie-keys';

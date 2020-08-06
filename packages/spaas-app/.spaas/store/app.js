@@ -1,6 +1,6 @@
 import {appOptions} from '@/services/v1/spaas-application-center';
 import ENV from '@/envconfig/config';
-import {appList} from '../../config';
+import {appList} from '@/config';
 
 //判断是否私有
 const isPrivate = ENV.BUILD_TYPE == ENV.BUILD_TYPE_PRIVATE;
