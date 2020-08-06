@@ -10,7 +10,7 @@
  * **********************************************************
  */
 import Vue from 'vue';
-import cookie from 'js-cookie';
+import {cookie} from 'dx-admin-components';
 import cookieKeys from '@/const/cookie-keys';
 
 const LOGIN_PATH = '/login';
