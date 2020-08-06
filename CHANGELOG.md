@@ -1,4 +1,13 @@
-# [](https://github.com/spaasteam/spaas/compare/v3.1.0...v) (2020-06-28)
+# [](https://github.com/spaasteam/spaas/compare/v3.2.0...v) (2020-08-06)
+
+
+
+# [3.2.0](https://github.com/spaasteam/spaas/compare/v3.1.0...v3.2.0) (2020-08-06)
+
+
+### Bug Fixes
+
+* 解决跨环境token隔离问题 ([#48](https://github.com/spaasteam/spaas/issues/48)) ([01865af](https://github.com/spaasteam/spaas/commit/01865afb31498a5cc1e0b7f7f497ea1cde7e2c93))
 
 
 
