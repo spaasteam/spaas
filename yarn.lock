@@ -6306,10 +6306,10 @@ please-upgrade-node@^3.1.1, please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-pont-engine@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npm.taobao.org/pont-engine/download/pont-engine-1.0.3.tgz#64acaf42eee072b3f5a7d7077980d9a5e33e8899"
-  integrity sha1-ZKyvQu7gcrP1p9cHeYDZpeM+iJk=
+pont-engine@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npm.taobao.org/pont-engine/download/pont-engine-1.0.6.tgz#f3bfbad0fcc4e194a7f8f21cb552fa86fe36cf31"
+  integrity sha1-87+60PzE4ZSn+PIctVL6hv42zzE=
   dependencies:
     chalk "^2.3.0"
     commander "^2.19.0"

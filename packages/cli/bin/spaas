@@ -15,4 +15,5 @@ program
   .command('nuxt', 'nuxt service')
   .command('yarn', 'yarn private package')
   .command('build', 'build project and transport to oss')
+  .command('obs', 'build project and transport to obs')
   .parse(process.argv)
